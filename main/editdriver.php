@@ -1,35 +1,36 @@
-<form style="overflow-x: hidden;" id="adduser" onsubmit="event.preventDefault();sendForm('', '', 'insertdriver', 'resultid', 'adduser');return 0;">
+<?php
+include "session.php";
+$id = $_GET['hakuna'];
+$rowuser = $obj->selectextrawhere("users", "id=" . $id . "")->fetch_assoc()
+?>
+<form style="overflow-x: hidden;" id="adduser" onsubmit="event.preventDefault();sendForm('id', '<?= $id ?>', 'updatedriver', 'resultid', 'adduser');return 0;">
     <label class="block text-sm" style="margin-bottom: 5px;">
         <span class="text-gray-700 dark:text-gray-400">Name</span>
-        <input name="name" data-bvalidator="required" class="form-control" placeholder="Driver's Name" />
+        <input name="name" value="<?= $rowuser['name'] ?>" data-bvalidator="required" class="form-control" placeholder="Driver's Name" />
     </label>
-    <!-- <label class="block text-sm" style="margin-bottom: 5px;">
-        <span class="text-gray-700 dark:text-gray-400">Email</span>
-        <input name="email" data-bvalidator="required,email" class="form-control" placeholder="Driver's Email ID" />
-    </label> -->
     <div class="row">
         <label class="col-6 block text-sm" style="margin-bottom: 5px;">
             <span class="text-gray-700 dark:text-gray-400">Mob No.</span>
-            <input data-bvalidator="required,digit,minlength[10],maxlength[10]" name="mobile" class="form-control" placeholder="Driver's Mobile No." />
+            <input data-bvalidator="required,digit,minlength[10],maxlength[10]" name="mobile" value="<?= $rowuser['mobile'] ?>" class="form-control" placeholder="Driver's Mobile No." />
         </label>
         <label class="col-6 block text-sm" style="margin-bottom: 5px;">
             <span class="text-gray-700 dark:text-gray-400">Whataspp No.</span>
-            <input data-bvalidator="required,digit,minlength[10],maxlength[10]" name="whatsappno" class="form-control" placeholder="Driver's Whatsapp No." />
+            <input data-bvalidator="required,digit,minlength[10],maxlength[10]" name="whatsappno" value="<?= $rowuser['whatsappno'] ?>" class="form-control" placeholder="Driver's Whatsapp No." />
         </label>
     </div>
     <div class="row">
         <label class="col-6 block text-sm" style="margin-bottom: 5px;">
             <span class="text-gray-700 dark:text-gray-400">Aadhar No.</span>
-            <input data-bvalidator="required" name="adharno" class="form-control" placeholder="Enter Aadhar No." /></label>
+            <input data-bvalidator="required" value="<?= $rowuser['adharno'] ?>" name="adharno" class="form-control" placeholder="Enter Aadhar No." /></label>
         <label class="col-6 block text-sm" style="margin-bottom: 5px;">
             <span class="text-gray-700 dark:text-gray-400">License No.</span>
-            <input data-bvalidator="required" name="drivinglicense" class="form-control" placeholder="" /></label>
+            <input data-bvalidator="required" value="<?= $rowuser['drivinglicense'] ?>" name="drivinglicense" class="form-control" placeholder="" /></label>
     </div>
 
     <div class="row">
-        <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+        <label class="col-6 block text-sm" style="margin-bottom: 5px;position:relative">
             <span class="text-gray-700 dark:text-gray-400">Password</span>
-            <input type="password" data-bvalidator="required,maxlength[8],minlength[4]" id="password" name="password" class="form-control" placeholder="Enter Password!" />
+            <input type="password" value="<?= $rowuser['password'] ?>" data-bvalidator="required,maxlength[8],minlength[4]" id="password" name="password" class="form-control" placeholder="Enter Password!" />
             <i id="eye" class="fa fa-eye" style="position: absolute;top:34px;right:18px;z-index:50" aria-hidden="true"></i>
         </label>
 

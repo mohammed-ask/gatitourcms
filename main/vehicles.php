@@ -9,14 +9,12 @@ ob_start();
 <div class="container px-6 mx-auto grid mobile-bottom-margin">
 
     <div class="flex" style="align-items: center;justify-content:space-between">
-        <h3 class="my-6 font-semibold text-gray-700 dark:text-gray-200">Drivers List</h3>
-        <?php //if (in_array(1, $permissions)) { 
-        ?>
-        <button @click="openModal" onclick='dynamicmodal("none", "adddriver", "", "Add New Driver")' class="my-6 px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
-            + Add Driver
-        </button>
-        <?php //} 
-        ?>
+        <h3 class="my-6 font-semibold text-gray-700 dark:text-gray-200">Vehicles List</h3>
+        <?php if (in_array(1, $permissions)) { ?>
+            <button @click="openModal" onclick='dynamicmodal("", "addvehicle", "", "Add New Vehicle")' class="my-6 px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                + Add Vehicle
+            </button>
+        <?php } ?>
 
     </div>
 
@@ -29,14 +27,12 @@ ob_start();
                 <thead>
                     <tr class="text-sm font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                         <th class="px-3 py-2">S.No.</th>
-                        <th class="px-3 py-2">User Name</th>
-                        <th class="px-3 py-2">Profile</th>
-                        <th class="px-3 py-2">Mobile No.</th>
-                        <th class="px-3 py-2">Whatsapp No.</th>
-                        <th class="px-3 py-2">License No.</th>
-                        <th class="px-3 py-2">License Photo</th>
-                        <th class="px-3 py-2">Adhar</th>
-                        <th class="px-3 py-2">Vehicles</th>
+                        <th class="px-3 py-2">Name</th>
+                        <th class="px-3 py-2">Type</th>
+                        <th class="px-3 py-2">Driver Name</th>
+                        <th class="px-3 py-2">Vehicle No.</th>
+                        <th class="px-3 py-2">No. of seats</th>
+                        <th class="px-3 py-2">added on</th>
                         <th class="px-3 py-2">Action</th>
                     </tr>
                 </thead>
@@ -53,7 +49,7 @@ ob_start();
 $pagemaincontent = ob_get_contents();
 ob_end_clean();
 $pagemeta = "";
-$pagetitle = "Gati Tour: Drivers List";
+$pagetitle = "Gati Tour: Customers List";
 $contentheader = "";
 $pageheader = "";
 include "templete.php";
@@ -61,7 +57,7 @@ include "templete.php";
 <script>
     $(function() {
         $('#example2').DataTable({
-            "ajax": "main/driverdata.php",
+            "ajax": "main/vehiclesdata.php",
             "processing": true,
             "serverSide": true,
             "pageLength": 1000,
@@ -77,15 +73,4 @@ include "templete.php";
             ]
         });
     });
-    $(document).on('click', '#eye', () => {
-        iconname = $("#eye").attr("class");
-        if (iconname === 'fa fa-eye') {
-            $('#password').attr('type', 'text')
-            $("#eye").attr('class', 'fa fa-eye-slash')
-
-        } else {
-            $('#password').attr('type', 'password')
-            $("#eye").attr('class', 'fa fa-eye')
-        }
-    })
 </script>

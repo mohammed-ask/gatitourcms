@@ -17,6 +17,7 @@ $xx['mobile'] = $_POST['mobile'];
 $xx['whatsappno'] = $_POST['whatsappno'];
 $xx['adharno'] = $_POST['adharno'];
 $xx['drivinglicense'] = $_POST['drivinglicense'];
+$xx['password'] = $_POST['password'];
 $xx['type'] = 3;
 $user = $obj->insertnew("users", $xx);
 if ($user > 0) {

@@ -47,22 +47,26 @@ while ($row = $obj->fetch_assoc($result)) {
     $n = array();
     $n[] = $i;
     $n[] = $row['name'];
-    $n[] = $row['avatar'];
+    $n[] = ' <a target="_blank"  href="' . $obj->fetchattachment($row["avatar"]) . '"><img style="width:50px;height:50px" src="' . $obj->fetchattachment($row["avatar"]) . '"/></a> ';
+
     $n[] = $row['mobile'];
     $n[] = $row['whatsappno'];
     $n[] = $row['drivinglicense'];
-    $n[] = $row['licensephoto'];
+    $n[] = ' <a target="_blank"  href="' . $obj->fetchattachment($row["licensephoto"]) . '"><img style="width:50px;height:50px" src="' . $obj->fetchattachment($row["licensephoto"]) . '"/></a> ';
     $n[] = $row['adharno'];
-    $n[] = $row['licensephoto'];
-    // $a = "";
+    $n[] =  "<button class='flex items-center justify-between px-2 py-1 bg-blue text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray' @click='openModal'  onclick='dynamicmodal(\"" . $row['id'] . "\", \"drivervehicles\", \"\", \"\")'  aria-label='Go'>
+    <span>Show Vehicles</span>
+</button>";
+    $a = "";
     // if (in_array(26, $permissions)) {
-    //     $a = '<a class="px-4 py-2 ml-1 text-sm font-medium leading-5 text-white  bg-blue  rounded-lg " href="editrole?hakuna=' . $row['id'] . '" >Edit</a>';
+    $a .=  "<a class='px-4 py-2 ml-1 text-sm font-medium leading-5 text-white  bg-primary  rounded-lg' @click='openModal'  onclick='dynamicmodal(\"" . $row['id'] . "\", \"editdriver\", \"\", \"\")'  aria-label='Go'>
+        <span>Edit Driver</span>
+    </a>";
     // }
     // if (in_array(27, $permissions)) {
-    //     // $a .= "<input type='button' class='px-4 py-2 ml-1 text-sm font-medium leading-5 text-white  bg-red  rounded-lg ' value='delete' onclick='del(\"" . $row['id'] . "\", \"deleterole\", \"Delete Role \")'/>";
-    //     $a .= "<a style='cursor: pointer;' class='px-4 py-2 ml-1 text-sm font-medium leading-5 text-white  bg-red  rounded-lg '  onclick='del(\"" . $row['id'] . "\", \"deleterole\", \"Delete Role \")' >Delete</a>";
+    $a .= "<a style='cursor: pointer;' class='px-4 py-2 ml-1 text-sm font-medium leading-5 text-white  bg-red  rounded-lg '  onclick='del(\"" . $row['id'] . "\", \"deletedriver\", \"Delete Driver \")' >Delete</a>";
     // }
-    // $n[] = $a;
+    $n[] = $a;
     $data[] = $n;
     $i++;
 }
