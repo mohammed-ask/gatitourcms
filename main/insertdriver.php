@@ -3,6 +3,11 @@ include "session.php";
 // echo "<pre>";
 // print_r($_FILES);
 // die;
+$mobile = $obj->selectfieldwhere("users", "count(id)", "mobile='" . $_POST['mobile'] . "'");
+if (!empty($mobile)) {
+    echo "<div class='alert alert-warning'>Mobile number already registered</div>";
+    die;
+}
 $xx['added_on'] = date('Y-m-d H:i:s');
 $xx['added_by'] = $employeeid;
 $xx['updated_on'] = date('Y-m-d H:i:s');
