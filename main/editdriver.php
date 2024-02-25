@@ -33,7 +33,11 @@ $rowuser = $obj->selectextrawhere("users", "id=" . $id . "")->fetch_assoc()
             <input type="password" value="<?= $rowuser['password'] ?>" data-bvalidator="required,maxlength[8],minlength[4]" id="password" name="password" class="form-control" placeholder="Enter Password!" />
             <i id="eye" class="fa fa-eye" style="position: absolute;top:34px;right:18px;z-index:50" aria-hidden="true"></i>
         </label>
-
+        <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+            <span class="text-gray-700 dark:text-gray-400">City</span>
+            <input type="text" value="<?= $rowuser['city'] ?>" data-bvalidator="required" id="city" name="city" class="form-control" placeholder="Enter City!" />
+            <i id="eye" class="fa fa-eye" style="position: absolute;top:34px;right:18px;z-index:50" aria-hidden="true"></i>
+        </label>
     </div>
 
     <div class="row mt-3">

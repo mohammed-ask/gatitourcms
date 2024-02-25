@@ -248,20 +248,23 @@ if ($obj->checktoken()) {
             $max = 4;
             $min = 4;
         } else if ($rowv['id'] == 2) {
-            $max = 5;
-            $min = 8;
+            $min = 5;
+            $max = 8;
         } else if ($rowv['id'] == 3) {
-            $max = 11;
-            $min = 15;
-        } else if ($rowv['id'] == 4) {
-            $max = 11;
             $min = 11;
+            $max = 15;
+        } else if ($rowv['id'] == 4) {
+            $min = 11;
+            $max = 11;
         } else if ($rowv['id'] == 5) {
-            $max = 12;
-            $min = 26;
+            $min = 12;
+            $max = 26;
         } else if ($rowv['id'] == 6) {
             $max = 48;
             $min = 48;
+        } else if ($rowv['id'] == 7) {
+            $max = 4;
+            $min = 4;
         };
         $vdetail[$rowv['name']] = [
             "path" => $rowv['path'],
@@ -270,6 +273,16 @@ if ($obj->checktoken()) {
             "minSeats" => $min,
         ];
     };
+    // uksort($vdetail, function ($a, $b) {
+    //     if ($a == 'Tempo Traveller') {
+    //         return 1;
+    //     } elseif ($b == 'Tempo Traveller') {
+    //         return -1;
+    //     } else {
+    //         return strcasecmp($a, $b);
+    //     }
+    // });
+    $vdetail = array_merge(array_diff_key($vdetail, ['Tempo Traveller' => 0]), ['Tempo Traveller' => $vdetail['Tempo Traveller']]);
     $data['vehicleDetail'] = $vdetail;
     // Check if data is found
     if (true) {

@@ -22,6 +22,20 @@ if (($_SERVER['HTTP_HOST'] == 'localhost')) {
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
     $platform = "test";
+} elseif ($_SERVER['HTTP_HOST'] == 'gatitour.in') {
+    if (!defined("BASE_URL")) {
+        define("BASE_URL", "https://pms-equity.com/");
+    }
+    $host = "localhost";
+    $database_Username = "u414903392_root";
+    $database_Password = "0f&||o5EJj|L";
+    $database_Name = "u414903392_gatitour";
+    $siteurl = "https://pms-equity.com/";
+    $port = 3306;
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+
+    $platform = "Production";
 }
 
 date_default_timezone_set('Asia/Kolkata');

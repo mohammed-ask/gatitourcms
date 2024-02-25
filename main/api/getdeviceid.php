@@ -239,21 +239,11 @@ function getAuthorizationHeader()
 if ($obj->checktoken()) {
 
     // Query the database
-    $dev = $obj->selectextrawhereupdate("users", "*", "apptoken = '" . getAuthorizationHeader() . "' ")->fetch_assoc();
-
-    $data['name'] = $dev['name'];
-    $data['mobile'] = $dev['mobile'];
-    $data['adharno'] = $dev['adharno'];
-    $data['whatsappno'] = $dev['whatsappno'];
-    $data['city'] = $dev['city'];
+    $dev = $obj->selectextrawhereupdate("users", "deviceid,trackenable", "apptoken = '" . getAuthorizationHeader() . "'")->fetch_assoc();
     $data['trackenable'] = $dev['trackenable'];
-    $data['licensephoto'] = $obj->fetchattachment($dev['licensephoto']);
-    $data['avatar'] = $obj->fetchattachment($dev['avatar']);
-
-    $vehicles = $obj->selectextrawhereupdate("vehicles inner join vehiclenames on vehiclenames.id = vehicles.vehicleid", "vehicles.name as vname,vehicleno,vehiclenames.name,seater", "userid=" . $dev['id'] . " and vehicles.status =1");
-    $data["vehicles"] = mysqli_fetch_all($vehicles, true);
+    $data['deviceid'] = $dev['deviceid'];
     // Check if data is found
-    if ($dev > 0) {
+    if (true) {
         // Return the data as JSON
         header('Content-Type: application/json');
         $data['status'] = "200";

@@ -15,6 +15,8 @@ if ($vid == 1) {
     $seatarray = range(12, 26);
 } else if ($vid == 6) {
     $seatarray = [48];
+} else if ($vid == 7) {
+    $seatarray = [4];
 }
 ?>
 <form style="overflow-x: hidden;" id="adduser" onsubmit="event.preventDefault();sendForm('id', '<?= $id ?>', 'updatevehicle', 'resultid', 'adduser');return 0;">
