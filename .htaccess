@@ -26,8 +26,8 @@ RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Redirect www to non-www
-RewriteCond %{HTTP_HOST} ^www\.gatitour\.com [NC]
-RewriteRule ^(.*)$ https://gatitour.com/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\.gatitour\.in [NC]
+RewriteRule ^(.*)$ https://gatitour.in/$1 [L,R=301]
   
     # <IfModule mod_rewrite.c>
     # RewriteEngine On
