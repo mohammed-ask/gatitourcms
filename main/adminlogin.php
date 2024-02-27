@@ -161,7 +161,7 @@ include 'conn.php';
         <div class="flex-1 h-full max-w-3xl mx-auto overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800">
             <div class="flex flex-col overflow-y-auto md:flex-row">
                 <div class="h-32 md:h-auto md:w-1/2">
-                    <img aria-hidden="true" class="object-contain w-full h-full dark:hidden" src="main/images/cars.png" style="object-fit: contain" alt="Office" />
+                    <img aria-hidden="true" class="object-contain w-full h-full dark:hidden" src="main/images/LoginGraphic.jpg" style="object-fit: contain" alt="Office" />
                     <!-- <img aria-hidden="true" class="hidden object-contain  w-full h-full dark:block" src="main/images/cars.png" alt="Office" /> -->
                 </div>
                 <div class=" items-center justify-center p-6 sm:p-12 md:w-1/2">

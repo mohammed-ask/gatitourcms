@@ -25,6 +25,8 @@ $xx['adharno'] = $_POST['adharno'];
 $xx['drivinglicense'] = $_POST['drivinglicense'];
 $xx['password'] = $_POST['password'];
 $xx['type'] = 3;
+$xx['lat'] = 0;
+$xx['long'] = 0;
 $user = $obj->insertnew("users", $xx);
 if ($user > 0) {
     echo "Redirect : Driver Created Successfully.  URLdrivers";
