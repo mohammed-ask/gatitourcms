@@ -24,13 +24,13 @@ if (($_SERVER['HTTP_HOST'] == 'localhost')) {
     $platform = "test";
 } elseif ($_SERVER['HTTP_HOST'] == 'gatitour.in') {
     if (!defined("BASE_URL")) {
-        define("BASE_URL", "https://pms-equity.com/");
+        define("BASE_URL", "https://gatitour.in/");
     }
     $host = "localhost";
     $database_Username = "u414903392_root";
     $database_Password = "0f&||o5EJj|L";
     $database_Name = "u414903392_gatitour";
-    $siteurl = "https://pms-equity.com/";
+    $siteurl = "https://gatitour.in/";
     $port = 3306;
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
