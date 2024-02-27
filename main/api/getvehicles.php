@@ -10,10 +10,16 @@ header('Access-Control-Request-Headers: *');
 
 $host = "localhost";
 
-//Hostinger Server
+//Local Server
 $database_Username = "root";
 $database_Password = "";
 $database_Name = "gatitour";
+$port = 3306;
+
+//Hostinger Server
+$database_Username = "u414903392_root";
+$database_Password = "0f&||o5EJj|L";
+$database_Name = "u414903392_gatitour";
 $port = 3306;
 date_default_timezone_set('Asia/Kolkata');
 /* object for db class in function.php $obj */
