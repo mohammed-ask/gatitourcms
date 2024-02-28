@@ -254,6 +254,7 @@ if ($obj->checktoken()) {
     $data['city'] = $dev['city'];
     $data['trackenable'] = $dev['trackenable'];
     $data['licensephoto'] = $obj->fetchattachment($dev['licensephoto']);
+    $data['licenseno'] = $dev['drivinglicense'];
     $data['avatar'] = $obj->fetchattachment($dev['avatar']);
 
     $vehicles = $obj->selectextrawhereupdate("vehicles inner join vehiclenames on vehiclenames.id = vehicles.vehicleid", "vehicles.name as vname,vehicleno,vehiclenames.name,seater", "userid=" . $dev['id'] . " and vehicles.status =1");
