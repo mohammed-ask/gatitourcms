@@ -2,7 +2,9 @@
 include "main/session.php";
 /* @var $obj db */
 ob_start();
-
+$totalcutomer = $obj->selectfieldwhere("users", "count(id)", "status=1 and type=2");
+$totaldriver = $obj->selectfieldwhere("users", "count(id)", "status=1 and type=3");
+$totalvehicle = $obj->selectfieldwhere("vehicles", "count(id)", "status=1 ");
 ?>
 <style>
     #datacards a {
@@ -30,7 +32,7 @@ ob_start();
                     Total Customers
                 </p>
                 <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                    0
+                    <?= $totalcutomer ?>
                 </p>
             </div>
         </div>
@@ -48,7 +50,7 @@ ob_start();
                     Total Drivers
                 </p>
                 <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                    0
+                    <?= $totaldriver ?>
                 </p>
             </div>
         </div>
@@ -62,7 +64,7 @@ ob_start();
                     Total Vehicles
                 </p>
                 <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                    0
+                    <?= $totalvehicle ?>
                 </p>
             </div>
         </div>
