@@ -244,7 +244,7 @@ function getAuthorizationHeader()
 if ($obj->checktoken()) {
 
     // Query the database
-    $dev = $obj->selectextrawhereupdate("vehicles inner join users on users.id = vehicles.userid", "lat,`long`,users.name,mobile,whatsappno,vehicleno,vehicles.name as vname,avatar,vehicleid,seater", "vehicleid = '" . $_GET['vehicleid'] . "' and seater = '" . $_GET['seater'] . "'");
+    $dev = $obj->selectextrawhereupdate("vehicles inner join users on users.id = vehicles.userid", "lat,`long`,users.name,mobile,whatsappno,vehicleno,vehicles.name as vname,avatar,vehicleid,seater", "vehicleid = '" . $_GET['vehicleid'] . "' ");
     $vdata = [];
     while ($vrow = $obj->fetch_assoc($dev)) {
         $datas = [
