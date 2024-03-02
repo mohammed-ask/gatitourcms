@@ -290,6 +290,7 @@ if ($obj->checktoken()) {
     // });
     $vdetail = array_merge(array_diff_key($vdetail, ['Tempo Traveller' => 0]), ['Tempo Traveller' => $vdetail['Tempo Traveller']]);
     $data['vehicleDetail'] = $vdetail;
+    $data['isMapValid'] = $obj->selectfieldwhere('personal_detail', 'mapvalid', 'status=11');
     // Check if data is found
     if (true) {
         // Return the data as JSON
