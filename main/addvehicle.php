@@ -25,7 +25,7 @@ include "session.php";
     </label>
     <label class="block text-md">
         <span class="text-gray-700 dark:text-gray-400">Vehicle</span>
-        <select onchange="search('vehicle','seat','fillseats')" data-bvalidator="required" class="form-control select2" name="vehicleid" id="vehicle">
+        <select data-bvalidator="required" class="form-control select2" name="vehicleid" id="vehicle">
             <option value="">Select Vehicle</option>
             <?php
             $vehicles = $obj->selectextrawhereupdate("vehiclenames", "id,name", "status = 1 ");
@@ -37,7 +37,10 @@ include "session.php";
         </select>
     </label>
     <div id="seat">
-
+        <label class="block text-sm" style="margin-bottom: 5px;">
+            <span class="text-gray-700 dark:text-gray-400">Seater</span>
+            <input type="number" name="seater" data-bvalidator="required,digit,maxlength[2]" class="form-control" placeholder="" />
+        </label>
     </div>
     <div>
         <button type="submit" id="modalsubmit" class="w-full px-3 py-1 mt-6 text-sm font-medium hidden">
