@@ -256,7 +256,7 @@ if ($obj->checktoken()) {
     $data['licensephoto'] = $obj->fetchattachment($dev['licensephoto']);
     $data['licenseno'] = $dev['drivinglicense'];
     $data['avatar'] = $obj->fetchattachment($dev['avatar']);
-
+    $data['helpline'] = $obj->selectfieldwhere("personal_detail", "phone", "status = 11");
     $vehicles = $obj->selectextrawhereupdate("vehicles inner join vehiclenames on vehiclenames.id = vehicles.vehicleid", "vehicles.name as vname,vehicleno,vehiclenames.name,seater", "userid=" . $dev['id'] . " and vehicles.status =1");
     $data["vehicles"] = mysqli_fetch_all($vehicles, true);
     // Check if data is found
