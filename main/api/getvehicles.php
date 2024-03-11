@@ -288,7 +288,7 @@ if ($obj->checktoken()) {
     //         return strcasecmp($a, $b);
     //     }
     // });
-    $vdetail = array_merge(array_diff_key($vdetail, ['Tempo Traveller' => 0]), ['Tempo Traveller' => $vdetail['Tempo Traveller']]);
+    // $vdetail = array_merge(array_diff_key($vdetail, ['Tempo Traveller' => 0]), ['Tempo Traveller' => $vdetail['Tempo Traveller']]);
     $data['vehicleDetail'] = $vdetail;
     $data['isMapValid'] = $obj->selectfieldwhere('personal_detail', 'mapvalid', 'status=11');
     $data['helpline'] = $obj->selectfieldwhere("personal_detail", "phone", "status = 11");
