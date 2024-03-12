@@ -25,7 +25,11 @@
             <span class="text-gray-700 dark:text-gray-400">License No.</span>
             <input data-bvalidator="required" name="drivinglicense" class="form-control" placeholder="" /></label>
     </div>
-
+    <div class="row">
+        <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+            <span class="text-gray-700 dark:text-gray-400">License Expiry Date</span>
+            <input data-bvalidator="required" onfocus="setcalenderlimit(this.id,'')" name="licenseexpiry" class="form-control" placeholder="" id="date" /></label>
+    </div>
     <div class="row">
         <label class="col-6 block text-sm" style="margin-bottom: 5px;">
             <span class="text-gray-700 dark:text-gray-400">Password</span>

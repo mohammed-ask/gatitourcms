@@ -28,6 +28,7 @@ $xx['name'] = ucwords($_POST['name']);
 // $xx['email'] = $_POST['email'];
 $xx['mobile'] = $_POST['mobile'];
 $xx['city'] = $_POST['city'];
+$xx['licenseexpiry'] = changedateformate($_POST['licenseexpiry']);
 $xx['whatsappno'] = $_POST['whatsappno'];
 $xx['adharno'] = $_POST['adharno'];
 $xx['drivinglicense'] = $_POST['drivinglicense'];
