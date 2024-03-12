@@ -28,7 +28,7 @@
     <div class="row">
         <label class="col-6 block text-sm" style="margin-bottom: 5px;">
             <span class="text-gray-700 dark:text-gray-400">License Expiry Date</span>
-            <input data-bvalidator="required" onfocus="setcalenderlimit(this.id,'')" name="licenseexpiry" class="form-control" placeholder="" id="date" /></label>
+            <input data-bvalidator="required" onfocus="setcalendernolimit(this.id,'')" name="licenseexpiry" class="form-control" placeholder="" id="date" /></label>
     </div>
     <div class="row">
         <label class="col-6 block text-sm" style="margin-bottom: 5px;">
