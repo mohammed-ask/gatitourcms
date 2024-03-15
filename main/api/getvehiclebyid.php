@@ -258,6 +258,7 @@ if ($obj->checktoken()) {
             "vehicleNo" => $vrow["vehicleno"],
             "vehiclePhoto" => $obj->selectfieldwhere("vehiclenames", "path", "id=" . $vrow["vehicleid"] . ""),
             "seats" => $vrow["seater"],
+            "svgicon" => $obj->selectfieldwhere("vehiclenames", "svgicon", "id=" . $vrow["vehicleid"] . ""),
             "vehicleType" => $obj->selectfieldwhere("vehiclenames", "name", "id=" . $vrow["vehicleid"] . ""),
         ];
         array_push($vdata, $datas);
