@@ -1,6 +1,6 @@
 <?php
 include 'main/session.php';
-$head = "";
+$head = "index";
 if (($_SERVER['HTTP_HOST'] == 'localhost')) {
     $head = "/gatitourcms";
 }
