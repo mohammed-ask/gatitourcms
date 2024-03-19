@@ -50,7 +50,7 @@ if ($num) {
             if (isset($_POST['byuser'])) {
                 header('location:index');
             } else {
-                echo "Redirect : Logged in SuccessfullyURLindex";
+                echo "Redirect : Logged in SuccessfullyURLdashboard";
             }
             // }
         } else {
