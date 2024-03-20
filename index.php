@@ -18,6 +18,9 @@ switch ($request['path']) {
     case "$head/dashboard":
         require __DIR__ . '/main/dashboard.php';
         break;
+    case "$head/privacy-policy":
+        require __DIR__ . '/main/privacy-policy.php';
+        break;
     case "$head";
         require __DIR__ . '/main/index.php';
         break;
