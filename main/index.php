@@ -47,7 +47,7 @@
              
               <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#downloadapp">Download App</a></li>
 
-              <li class="nav-item px-3 px-xl-4"><a class="btn btn-outline-dark order-1 order-lg-0 fw-medium" href="#!">Admin Login</a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="btn btn-outline-dark order-1 order-lg-0 fw-medium" href="login">Admin Login</a></li>
               
             </ul>
           </div>
