@@ -48,7 +48,7 @@
             <h2>Information We Collect</h2>
             <ul>
                 <li>**Account Information:** When you sign up for an account, we collect your name, email address, and mobile number. You will also create a password for your account.</li>
-                <li>**Location Information (Optional):** We may request permission to access your device's location information, but this is entirely optional. This includes both foreground location (when the app is open) and background location (when the app is running in the background). You can choose to allow or deny these permissions through your device settings.</li>
+                <li>**Location Information (Optional):** We may request permission to access your device's location information, but this is entirely optional. This includes foreground location (when the app is open). You can choose to allow or deny these permissions through your device settings.</li>
             </ul>
         </section>
 
