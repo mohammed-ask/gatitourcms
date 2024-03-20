@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Your App Name] - Privacy Policy</title>
+    <title>Gatitour - Privacy Policy</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
@@ -35,13 +35,13 @@
 
 <body>
     <header>
-        <h1>[Your App Name] - Privacy Policy</h1>
+        <h1>Gatitour - Privacy Policy</h1>
     </header>
     <main>
         <section>
             <h2>Introduction</h2>
-            <p>This Privacy Policy describes how [Your Company Name] ("we," "us," or "our") collects, uses, and discloses your information when you use our mobile application, [Your App Name] ("App").</p>
-            <p>Effective Date: [Insert Date]</p>
+            <p>This Privacy Policy describes how Gatitour ("we," "us," or "our") collects, uses, and discloses your information when you use our mobile application, Gatitour .</p>
+            <p>Effective Date: 01/03/2024</p>
         </section>
 
         <section>
@@ -100,9 +100,7 @@
             <h2>Contact Us</h2>
             <p>If you have any questions about this Privacy Policy, please contact us at:</p>
             <ul>
-                <li>[Your Email Address]</li>
-                <li>[Your Phone Number (Optional)]</li>
-                <li>[Your Physical Address (Optional)]</li>
+                <li>smagrahari1980@gmail.com</li>
             </ul>
         </section>
 
