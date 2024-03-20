@@ -41,7 +41,7 @@
         <section>
             <h2>Introduction</h2>
             <p>This Privacy Policy describes how Gatitour ("we," "us," or "our") collects, uses, and discloses your information when you use our mobile application, Gatitour .</p>
-            <p>Effective Date: 01/03/2024</p>
+            <p>Effective Date: 01/02/2024</p>
         </section>
 
         <section>
