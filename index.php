@@ -111,6 +111,9 @@ switch ($request['path']) {
     case "$head/api/trackingpermission";
         require __DIR__ . '/main/api/trackingpermission.php';
         break;
+    case "$head/api/checkphone";
+        require __DIR__ . '/main/api/checkphone.php';
+        break;
     default:
         http_response_code(404);
         require __DIR__ . '/404.html';
