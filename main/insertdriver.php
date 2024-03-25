@@ -1,5 +1,10 @@
 <?php
-include "session.php";
+if (isset($_POST['password'])) {
+    include "session.php";
+} else {
+    include "function.php";
+    include "conn.php";
+}
 // echo "<pre>";
 // print_r($_FILES);
 // die;
@@ -9,9 +14,9 @@ if (!empty($mobile)) {
     die;
 }
 $xx['added_on'] = date('Y-m-d H:i:s');
-$xx['added_by'] = $employeeid;
+$xx['added_by'] = 0;
 $xx['updated_on'] = date('Y-m-d H:i:s');
-$xx['updated_by'] = $employeeid;
+$xx['updated_by'] = 0;
 $xx['status'] = 1;
 $path = 'main/uploads/driver';
 $xx['avatar'] = $obj->uploadfilenew($path, $_FILES, "avatar",  array("jpg", "jpeg", "png"));
@@ -24,11 +29,14 @@ $xx['licenseexpiry'] = changedateformate($_POST['licenseexpiry']);
 $xx['whatsappno'] = $_POST['whatsappno'];
 $xx['adharno'] = $_POST['adharno'];
 $xx['drivinglicense'] = $_POST['drivinglicense'];
-$xx['password'] = $_POST['password'];
+if (isset($_POST['password'])) {
+    $xx['password'] = $_POST['password'];
+}
 $xx['type'] = 3;
 $xx['lat'] = 0;
 $xx['long'] = 0;
 $user = $obj->insertnew("users", $xx);
+$red = !isset($_POST['password']) ? "index" : 'drivers';
 if ($user > 0) {
-    echo "Redirect : Driver Created Successfully.  URLdrivers";
+    echo "Redirect : Driver Created Successfully.  URL$red";
 }

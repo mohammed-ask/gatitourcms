@@ -29,7 +29,8 @@
   <!--    Stylesheets-->
   <!-- ===============================================-->
   <link href="main/dist/assets/css/theme.css" rel="stylesheet" />
-
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+  <link rel="stylesheet" href="main/plugins/jquery-ui/jquery-ui.css">
 </head>
 
 
@@ -66,14 +67,8 @@
             <h1 class="hero-title">Travel, enjoy and live a new and full life</h1>
             <p class="mb-4 fw-medium">At Gatitour, we're dedicated to transforming your travel experiences into unforgettable adventures.<br class="d-none d-xl-block" /> Explore the world with confidence and convenience with Gatitour by your side.</p>
             <div class="text-center text-md-start"> <a class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow" href="#downloadapp" role="button">Just Download App</a>
-              <!-- <div class="w-100 d-block d-md-none"></div><a href="#!" role="button" data-bs-toggle="modal" data-bs-target="#popupVideo"><span class="btn btn-danger round-btn-lg rounded-circle me-3 danger-btn-shadow"> <img src="main/dist/assets/img/hero/play.svg" width="15" alt="paly"/></span></a><span class="fw-medium">Play Demo</span>
-                <div class="modal fade" id="popupVideo" tabindex="-1" aria-labelledby="popupVideo" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                      <iframe class="rounded" style="width:100%;max-height:500px;" height="500px" src="https://www.youtube.com/embed/_lhdhL4UDIo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
-                    </div>
-                  </div>
-                </div> -->
+              <a class="btn btn-info btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow" href="#" role="button" id="showModalBtn">Driver Registration</a>
+
             </div>
           </div>
         </div>
@@ -249,15 +244,98 @@
 
 
 
-    <!-- <div class="col-lg-3 col-md-5 col-12 mb-4 mb-md-6 mb-lg-0 order-lg-4 order-md-1">
-        <div class="icon-group mb-4"> <a class="text-decoration-none icon-item shadow-social" id="facebook" href="#!"><i class="fab fa-facebook-f"> </i></a><a class="text-decoration-none icon-item shadow-social" id="instagram" href="#!"><i class="fab fa-instagram"> </i></a><a class="text-decoration-none icon-item shadow-social" id="twitter" href="#!"><i class="fab fa-twitter"> </i></a></div>
-        <h4 class="fw-medium font-sans-serif text-secondary mb-3">Discover our app</h4>
-        <div class="d-flex align-items-center"> <a href="#!"> <img class="me-2" src="main/dist/assets/img/play-store.png" alt="play store" /></a><a href="#!"> <img src="main/dist/assets/img/apple-store.png" alt="apple store" /></a></div>
-      </div> -->
-
 
     <div class="py-5 text-center">
-      <p class="mb-0 text-secondary fs--1 fw-medium">All rights reserved@gatitour.com </p>
+      <p class="mb-0 text-secondary fs--1 fw-medium">All rights reserved@gatitour.in </p>
+    </div>
+    <div class="modal fade" id="driverForm" tabindex="-1" role="dialog" aria-labelledby="driverFormLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-broswer" role="document">
+        <div class="modal-content browser-model-content">
+          <div class="modal-body">
+            <form style="overflow-x: hidden;" id="adduser">
+              <label class="block text-sm" style="margin-bottom: 5px;">
+                <span class="text-gray-700 dark:text-gray-400">Name</span>
+                <input name="name" data-bvalidator="required" class="form-control" placeholder="Driver's Name" />
+              </label>
+              <!-- <label class="block text-sm" style="margin-bottom: 5px;">
+        <span class="text-gray-700 dark:text-gray-400">Email</span>
+        <input name="email" data-bvalidator="required,email" class="form-control" placeholder="Driver's Email ID" />
+    </label> -->
+              <div class="row">
+                <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+                  <span class="text-gray-700 dark:text-gray-400">Mob No.</span>
+                  <input data-bvalidator="required,digit,minlength[10],maxlength[10]" name="mobile" class="form-control" placeholder="Driver's Mobile No." />
+                </label>
+                <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+                  <span class="text-gray-700 dark:text-gray-400">Whataspp No.</span>
+                  <input data-bvalidator="required,digit,minlength[10],maxlength[10]" name="whatsappno" class="form-control" placeholder="Driver's Whatsapp No." />
+                </label>
+              </div>
+              <div class="row">
+                <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+                  <span class="text-gray-700 dark:text-gray-400">Aadhar No.</span>
+                  <input data-bvalidator="required" name="adharno" class="form-control" placeholder="Enter Aadhar No." /></label>
+                <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+                  <span class="text-gray-700 dark:text-gray-400">License No.</span>
+                  <input data-bvalidator="required" name="drivinglicense" class="form-control" placeholder="" /></label>
+              </div>
+              <div class="row">
+                <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+                  <span class="text-gray-700 dark:text-gray-400">License Expiry Date</span>
+                  <input data-bvalidator="required" onfocus="setcalendernolimit(this.id,'')" name="licenseexpiry" class="form-control" placeholder="" id="date" /></label>
+              </div>
+              <div class="row">
+                <!-- <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+                  <span class="text-gray-700 dark:text-gray-400">Password</span>
+                  <input type="password" data-bvalidator="required,maxlength[8],minlength[4]" id="password" name="password" class="form-control" placeholder="Enter Password!" />
+                  <i id="eye" class="fa fa-eye" style="position: absolute;top:34px;right:18px;z-index:50" aria-hidden="true"></i>
+                </label> -->
+                <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+                  <span class="text-gray-700 dark:text-gray-400">City</span>
+                  <input type="text" data-bvalidator="required" id="city" name="city" class="form-control" placeholder="Enter City!" />
+                  <i id="eye" class="fa fa-eye" style="position: absolute;top:34px;right:18px;z-index:50" aria-hidden="true"></i>
+                </label>
+
+              </div>
+
+              <div class="row mt-3">
+                <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+                  <span class="text-gray-700 dark:text-gray-400">Driver Photo</span>
+                  <input style="padding: 3px; border-color: #00aaaa; font-size: 14px; background-color: #efffff;" xdata-bvalidator="required" class="form-control" type="file" name="avatar">
+                </label>
+                <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+                  <span class="text-gray-700 dark:text-gray-400">License Photo</span>
+                  <input style="padding: 3px; border-color: #00aaaa; font-size: 14px; background-color: #efffff;" xdata-bvalidator="required" class="form-control" type="file" name="license">
+                </label>
+              </div>
+
+              <div>
+                <!-- <button type="submit" id="modalsubmit" class="w-full px-3 py-1 mt-6 text-sm font-medium hidden">
+                  Submit
+                </button> -->
+              </div>
+              <div id="resultid"></div>
+            </form>
+          </div>
+          <div class="modal-footer modal-footer-browser">
+            <button type="button" id="cancal" class="btn btn-secondary browser-btn browser-btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary browser-btn browser-btn-primary" onclick="event.preventDefault();sendForm('', '', 'insertdriver', 'resultid', 'adduser')">Proceed</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="customConfirmModal" tabindex="-1" role="dialog" aria-labelledby="customConfirmModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-broswer" role="document">
+        <div class="modal-content browser-model-content">
+          <div class="modal-body">
+            Are you sure you want to proceed?
+          </div>
+          <div class="modal-footer modal-footer-browser">
+            <button type="button" id="cancal" class="btn btn-secondary browser-btn browser-btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary browser-btn browser-btn-primary" onclick="handleCustomConfirm(true)">Proceed</button>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
   <!-- ===============================================-->
@@ -270,14 +348,29 @@
   <!-- ===============================================-->
   <!--    JavaScripts-->
   <!-- ===============================================-->
+  <script src="main/plugins/jquery/jquery.min.js"></script>
+  <script src="main/plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="main/dist/js/customfunction.js"></script>
+  <script src="main/dist/js/jquery.bvalidator-yc.js"></script>
   <script src="main/dist/vendors/@popperjs/popper.min.js"></script>
   <script src="main/dist/vendors/bootstrap/bootstrap.min.js"></script>
   <script src="main/dist/vendors/is/is.min.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
   <script src="main/dist/vendors/fontawesome/all.min.js"></script>
   <script src="main/dist/assets/js/theme.js"></script>
-
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
 </body>
 
 </html>
+<script>
+  $(document).ready(function() {
+    $('#showModalBtn').click(function() {
+      $('#driverForm').modal('show');
+    });
+
+    $("#cancal").click(function() {
+      $('#driverForm').modal('hide');
+    })
+  });
+</script>
