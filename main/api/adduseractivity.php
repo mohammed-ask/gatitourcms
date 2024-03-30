@@ -241,47 +241,40 @@ function getAuthorizationHeader()
     return isset($headers['Authorization']) ? $headers['Authorization'] : null;
 }
 
-if ($obj->checktoken()) {
 
-    // Query the database
-    $dev = $obj->selectextrawhereupdate("vehicles inner join users on users.id = vehicles.userid", "lat,`long`,users.name,mobile,whatsappno,vehicleno,vehicles.name as vname,avatar,vehicleid,seater,vehicles.userid as driverid,vehicles.id as drivervehicleid", "vehicleid = '" . $_GET['vehicleid'] . "' and vehicles.status = 1");
-    $vdata = [];
-    while ($vrow = $obj->fetch_assoc($dev)) {
-        $datas = [
-            "driverName" => $vrow['name'],
-            "driverid" => $vrow['driverid'],
-            "vehicleid" => $vrow['drivervehicleid'],
-            "avatar" => $obj->fetchattachment($vrow['avatar']),
-            "mobile" => $vrow['mobile'],
-            "whatsapp" => $vrow['whatsappno'],
-            "latitude" => $vrow['lat'],
-            "longitude" => $vrow['long'],
-            "vehicleName" => $vrow["vname"],
-            "vehicleNo" => $vrow["vehicleno"],
-            "vehiclePhoto" => $obj->selectfieldwhere("vehiclenames", "path", "id=" . $vrow["vehicleid"] . ""),
-            "seats" => $vrow["seater"],
-            "svgicon" => $obj->selectfieldwhere("vehiclenames", "svgicon", "id=" . $vrow["vehicleid"] . ""),
-            "vehicleType" => $obj->selectfieldwhere("vehiclenames", "name", "id=" . $vrow["vehicleid"] . ""),
-        ];
-        array_push($vdata, $datas);
-    }
-    $data['vehicleInfo'] = $vdata;
+if (isset($_GET['userid']) && isset($_GET['driverid']) && isset($_GET['tapon']) && isset($_GET['vehicleid'])) {
+    $mobile = $obj->selectfieldwhere("users", "count(id)", "mobile='" . $_GET['mobile'] . "'");
+    if (empty($mobile)) {
+        $xx['added_on'] = date('Y-m-d H:i:s');
+        $xx['added_by'] = 1;
+        $xx['status'] = 1;
+        $xx["userid"] = $_GET['userid'];
+        $xx["driverid"] = $_GET['driverid'];
+        $xx['tapon'] = $_GET['tapon'];
+        $xx['vehicleid'] = $_GET['vehicleid'];
+        // Query the database
+        $user = $obj->insertnew("useractivity", $xx);
 
-    // Check if data is found
-    if (true) {
-        // Return the data as JSON
-        header('Content-Type: application/json');
-        $data['status'] = "200";
+        // Check if data is found
+        if ($user > 0) {
+            // Return the data as JSON
+            header('Content-Type: application/json');
+            $data['status'] = "200";
 
-        echo json_encode($data);
+            echo json_encode($data);
+        } else {
+            // If no data found
+            header('HTTP/1.1 404 Not Found');
+            echo json_encode(['error' => 'Somthing went wrong']);
+        }
     } else {
-        // If no data found
         header('HTTP/1.1 404 Not Found');
-        echo json_encode(['error' => 'Somthing went wrong']);
+        echo json_encode(['error' => 'Mobile number already registered']);
     }
 } else {
+    // If userid is not provided
     header('HTTP/1.1 400 Bad Request');
-    echo json_encode(['error' => 'Token is invalid']);
+    echo json_encode(['error' => 'Name/Mobile/Password is required']);
 }
 // run SQL statement
 
