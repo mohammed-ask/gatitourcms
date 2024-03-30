@@ -111,6 +111,9 @@ switch ($request['path']) {
     case "$head/api/trackingpermission";
         require __DIR__ . '/main/api/trackingpermission.php';
         break;
+    case "$head/api/adduseractivity";
+        require __DIR__ . '/main/api/adduseractivity.php';
+        break;
     case "$head/api/checkphone";
         require __DIR__ . '/main/api/checkphone.php';
         break;
