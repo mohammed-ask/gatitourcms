@@ -268,7 +268,7 @@ if ($obj->checktoken()) {
     $data['mobile'] = $dev['mobile'];
     $data['adharno'] = $dev['adharno'];
     $data['whatsappno'] = $dev['whatsappno'];
-    $data['lastupdate'] = changedateformatespecito($dev['lastupdate'], "Y-m-d H:i:s", "d/m/Y H:i");
+    $data['lastupdate'] = changedateformatespecito($dev['lastupdate'], "Y-m-d H:i:s", "d/m/Y h:i a");
     $data['city'] = $dev['city'];
     $data['trackenable'] = $dev['trackenable'];
     $data['licensephoto'] = $obj->fetchattachment($dev['licensephoto']);
