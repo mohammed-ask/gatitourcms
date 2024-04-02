@@ -84,6 +84,9 @@ switch ($request['path']) {
     case "$head/inserthelpline";
         require __DIR__ . '/main/inserthelpline.php';
         break;
+    case "$head/useractivity";
+        require __DIR__ . '/main/useractivity.php';
+        break;
     case "$head/gitpull";
         require __DIR__ . '/main/guthubpull.php';
         break;
