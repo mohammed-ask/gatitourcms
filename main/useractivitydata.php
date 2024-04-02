@@ -50,7 +50,7 @@ while ($row = $obj->fetch_assoc($result)) {
     $n[] = $obj->selectfieldwhere("vehicles", "name", "id=" . $row['vehicleid'] . "");
     $n[] = $obj->selectfieldwhere("users", "name", "id=" . $row['driverid'] . "");
     $n[] = $row['tapon'];
-    $n[] = changedateformatespecito($row['tapat'], "Y-m-d H:i:s", "d/m/Y H:i a");
+    $n[] = changedateformatespecito($row['added_on'], "Y-m-d H:i:s", "d/m/Y H:i a");
     $data[] = $n;
     $i++;
 }
