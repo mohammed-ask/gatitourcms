@@ -249,19 +249,21 @@ if ($obj->checktoken()) {
         $xx["long"] = $_GET['long'];
         $xx['lastupdate'] = date('Y-m-d H:i:s');
         // Query the database
-        $loc = $obj->updatewhere("users", $xx, "apptoken = '" . getAuthorizationHeader() . "'");
+        if ($xx['lat'] != '9999999') {
+            $loc = $obj->updatewhere("users", $xx, "apptoken = '" . getAuthorizationHeader() . "'");
 
-        // Check if data is found
-        if ($loc > 0) {
-            // Return the data as JSON
-            header('Content-Type: application/json');
-            $data['status'] = "200";
+            // Check if data is found
+            if ($loc > 0) {
+                // Return the data as JSON
+                header('Content-Type: application/json');
+                $data['status'] = "200";
 
-            echo json_encode($data);
-        } else {
-            // If no data found
-            header('HTTP/1.1 404 Not Found');
-            echo json_encode(['error' => 'Somthing went wrong']);
+                echo json_encode($data);
+            } else {
+                // If no data found
+                header('HTTP/1.1 404 Not Found');
+                echo json_encode(['error' => 'Somthing went wrong']);
+            }
         }
     } else {
         // If userid is not provided
