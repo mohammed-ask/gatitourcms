@@ -237,6 +237,7 @@ if (isset($_GET['mobile']) && isset($_GET['password'])) {
         header('Content-Type: application/json');
         $token = bin2hex(random_bytes(32));
         $xx['apptoken'] = $token;
+        $xx["appversion"] = isset($_GET['appversion']) ? $_GET['appversion'] : '';
         $obj->update("users", $xx, $data['id']);
         $data['token'] = $xx['apptoken'];
         $data['type'] = $data['type'] == 2 ? "Customer" : "Driver";
