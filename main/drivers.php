@@ -37,6 +37,7 @@ ob_start();
                         <th class="px-3 py-2">Tracking Enabled</th>
                         <th class="px-3 py-2">License Expire</th>
                         <th class="px-3 py-2">License Photo</th>
+                        <th class="px-3 py-2">App Version</th>
                         <th class="px-3 py-2">Adhar</th>
                         <th class="px-3 py-2">Vehicles</th>
                         <th class="px-3 py-2">Action</th>

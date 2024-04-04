@@ -55,6 +55,7 @@ while ($row = $obj->fetch_assoc($result)) {
     $n[] = $row['trackenable'];
     $n[] = changedateformatespecito($row['licenseexpiry'], "Y-m-d", "d/m/Y");
     $n[] = ' <a target="_blank"  href="' . $obj->fetchattachment($row["licensephoto"]) . '"><img style="width:50px;height:50px" src="' . $obj->fetchattachment($row["licensephoto"]) . '"/></a> ';
+    $n[] = $row['appversion'];
     $n[] = $row['adharno'];
     $n[] =  "<button class='flex items-center justify-between px-2 py-1 bg-blue text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray' @click='openModal'  onclick='dynamicmodal(\"" . $row['id'] . "\", \"drivervehicles\", \"\", \"\")'  aria-label='Go'>
     <span>Show Vehicles</span>
