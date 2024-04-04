@@ -247,6 +247,7 @@ if ($obj->checktoken()) {
 
         $xx["lat"] = $_GET['lat'];
         $xx["long"] = $_GET['long'];
+        $xx["appversion"] = isset($_GET['appversion']) ? $_GET['appversion'] : '';
         $xx['lastupdate'] = date('Y-m-d H:i:s');
         // Query the database
         if ($xx['lat'] != '9999999') {

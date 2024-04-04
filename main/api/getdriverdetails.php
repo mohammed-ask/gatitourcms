@@ -51,23 +51,23 @@ class db
 
         $sql11 = $sql;
         $sql . "<br><br><br>";
-        $da = date("Ymd");
-        mysqli_query($this->con, "CREATE TABLE IF NOT EXISTS `zquerylogs$da`  (
-  `id` int(255) NOT NULL AUTO_INCREMENT,
-  `query` text  NULL,
-  `url` text  NULL,
-  `added_by` int(255)  NULL,
-  `added_on` datetime  NULL,
-  `updated_by` int(255)  NULL,
-  `updated_on` datetime  NULL,
-  `status` int(11)  NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-");
+        //         $da = date("Ymd");
+        //         mysqli_query($this->con, "CREATE TABLE IF NOT EXISTS `zquerylogs$da`  (
+        //   `id` int(255) NOT NULL AUTO_INCREMENT,
+        //   `query` text  NULL,
+        //   `url` text  NULL,
+        //   `added_by` int(255)  NULL,
+        //   `added_on` datetime  NULL,
+        //   `updated_by` int(255)  NULL,
+        //   `updated_on` datetime  NULL,
+        //   `status` int(11)  NULL,
+        //   PRIMARY KEY (`id`)
+        // ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+        // ");
         $sql1 = $this->escape($sql);
         $url = $_SERVER['REQUEST_URI'];
         $datetimenow = date("Y-m-d H:i:s");
-        $sql2 = "insert into `zquerylogs$da`(query,url,added_by,added_on,updated_by,updated_on,status) values('$sql1','$url','$employeeid','$datetimenow','$employeeid','$datetimenow',1)";
+        // $sql2 = "insert into `zquerylogs$da`(query,url,added_by,added_on,updated_by,updated_on,status) values('$sql1','$url','$employeeid','$datetimenow','$employeeid','$datetimenow',1)";
 
         // mysqli_query($this->con, $sql2) or die($sql2 . mysqli_error($this->con));
 
@@ -278,6 +278,10 @@ if ($obj->checktoken()) {
     $data['helpline'] = $obj->selectfieldwhere("personal_detail", "phone", "status = 11");
     $vehicles = $obj->selectextrawhereupdate("vehicles inner join vehiclenames on vehiclenames.id = vehicles.vehicleid", "vehicles.name as vname,vehicleno,vehiclenames.name,seater", "userid=" . $dev['id'] . " and vehicles.status =1");
     $data["vehicles"] = mysqli_fetch_all($vehicles, true);
+
+    $useractivity = $obj->selectextrawhereupdate("useractivity inner join users on users.id = useractivity.userid inner join vehicles on vehicles.id = useractivity.vehicleid", "users.name,vehicles.name as vname,tapon,useractivity.added_on", "useractivity.driverid=" . $dev['id'] . " and useractivity.status =1");
+    $data["useractivity"] = mysqli_fetch_all($useractivity, true);
+
     // Check if data is found
     if ($dev > 0) {
         // Return the data as JSON
