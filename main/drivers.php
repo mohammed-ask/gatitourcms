@@ -77,7 +77,7 @@ include "templete.php";
             "ordering": true,
             "info": true,
             "autoWidth": false,
-            "responsive": false,
+            "responsive": true,
             "order": [
                 [0, "desc"]
             ]
