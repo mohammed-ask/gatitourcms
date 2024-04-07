@@ -21,7 +21,7 @@ ob_start();
     </div>
 
 
-    <div class="w-full overflow-hidden rounded-lg shadow-xs">
+    <div class="w-full  rounded-lg shadow-xs">
 
         <div class="w-full ">
 
@@ -77,7 +77,7 @@ include "templete.php";
             "ordering": true,
             "info": true,
             "autoWidth": false,
-            "responsive": true,
+            "responsive": false,
             "order": [
                 [0, "desc"]
             ]
