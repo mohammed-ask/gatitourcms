@@ -62,7 +62,7 @@ while ($row = $obj->fetch_assoc($result)) {
 </button>";
     $n[] = $obj->selectfieldwhere("useractivity", "count(id)", "tapon='Whatsapp' and driverid=" . $row['id'] . " and status = 1");
     $n[] = $obj->selectfieldwhere("useractivity", "count(id)", "tapon='Phone' and driverid=" . $row['id'] . " and status = 1");
-    $n[] = "Latitude : " . $row['lat'] . "Longitude : " . $row['long'] . " on" . changedateformatespecito($row['lastupdate'], "Y-m-d H:i:s", "d/m/Y");
+    $n[] = "Latitude : " . round($row['lat'], 3) . " Longitude : " . round($row['long'], 3) . " on" . changedateformatespecito($row['lastupdate'], "Y-m-d H:i:s", "d/m/Y");
     $a = "";
     // if (in_array(26, $permissions)) {
     $a .=  "<a class='px-4 py-2 ml-1 text-sm font-medium leading-5 text-white  bg-primary  rounded-lg' @click='openModal'  onclick='dynamicmodal(\"" . $row['id'] . "\", \"editdriver\", \"\", \"\")'  aria-label='Go'>
