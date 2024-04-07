@@ -38,7 +38,7 @@ $return['recordsFiltered'] = $obj->selectfieldwhere("users ", "count(users.id)",
 $return['draw'] = $_GET['draw'];
 $result = $obj->selectextrawhereupdate(
     "users ",
-    "`users`.`name`, `users`.`email`,`users`.`id`,`users`.`mobile` ",
+    "`users`.`name`, `users`.`email`,`users`.`id`,`users`.`mobile`,`users`.`password`,`users`.`added_on` ",
     "status=1 and type = 2 $search $order limit $start, $limit"
 );
 $num = $obj->total_rows($result);
