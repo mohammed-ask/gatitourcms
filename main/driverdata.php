@@ -60,6 +60,8 @@ while ($row = $obj->fetch_assoc($result)) {
     $n[] =  "<button class='flex items-center justify-between px-2 py-1 bg-blue text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray' @click='openModal'  onclick='dynamicmodal(\"" . $row['id'] . "\", \"drivervehicles\", \"\", \"\")'  aria-label='Go'>
     <span>Show Vehicles</span>
 </button>";
+    $n[] = $obj->selectfieldwhere("useractivity", "count(id)", "tapon='Whatsapp' and driverid=" . $row['id'] . " and status = 1");
+    $n[] = $obj->selectfieldwhere("useractivity", "count(id)", "tapon='Phone' and driverid=" . $row['id'] . " and status = 1");
     $a = "";
     // if (in_array(26, $permissions)) {
     $a .=  "<a class='px-4 py-2 ml-1 text-sm font-medium leading-5 text-white  bg-primary  rounded-lg' @click='openModal'  onclick='dynamicmodal(\"" . $row['id'] . "\", \"editdriver\", \"\", \"\")'  aria-label='Go'>

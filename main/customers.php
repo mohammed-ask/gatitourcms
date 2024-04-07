@@ -30,6 +30,8 @@ ob_start();
                         <th class="px-3 py-2">User Name</th>
                         <th class="px-3 py-2">Email ID</th>
                         <th class="px-3 py-2">Mob No.</th>
+                        <th class="px-3 py-2">Password</th>
+                        <th class="px-3 py-2">Joined on</th>
                         <!-- <th class="px-3 py-2">Action</th> -->
                     </tr>
                 </thead>

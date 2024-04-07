@@ -40,6 +40,8 @@ ob_start();
                         <th class="px-3 py-2">App Version</th>
                         <th class="px-3 py-2">Adhar</th>
                         <th class="px-3 py-2">Vehicles</th>
+                        <th class="px-3 py-2">Tap on Whatsapp</th>
+                        <th class="px-3 py-2">Tap on Phone</th>
                         <th class="px-3 py-2">Action</th>
                     </tr>
                 </thead>

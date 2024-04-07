@@ -49,6 +49,10 @@ while ($row = $obj->fetch_assoc($result)) {
     $n[] = $row['name'];
     $n[] = $row['email'];
     $n[] = $row['mobile'];
+    $n[] = $row['password'];
+    $n[] = changedateformatespecito($row['added_on'], "Y-m-d H:i:s", "d/m/Y");
+    // $n[] = $row['appversion'];
+
     // $a = "";
     // if (in_array(26, $permissions)) {
     //     $a = '<a class="px-4 py-2 ml-1 text-sm font-medium leading-5 text-white  bg-blue  rounded-lg " href="editrole?hakuna=' . $row['id'] . '" >Edit</a>';
