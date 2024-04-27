@@ -54,6 +54,23 @@
             <input style="padding: 3px; border-color: #00aaaa; font-size: 14px; background-color: #efffff;" xdata-bvalidator="required" class="form-control" type="file" name="license">
         </label>
     </div>
+    <div class="row mt-3">
+        <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+            <span class="text-gray-700 dark:text-gray-400">Vehicle Available</span>
+            <select data-bvalidator="required" class="form-control select2" name="vehicleavailable" id="vehicle">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </label>
+        <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+            <span class="text-gray-700 dark:text-gray-400">Vehicle Preference</span>
+            <select data-bvalidator="required" class="form-control select2" name="vehicletype" id="vehicle">
+                <option value="Both">Both</option>
+                <option value="Automatic">Automatic</option>
+                <option value="Semiautomatic">Semiautomatic</option>
+            </select>
+        </label>
+    </div>
 
     <div>
         <button type="submit" id="modalsubmit" class="w-full px-3 py-1 mt-6 text-sm font-medium hidden">

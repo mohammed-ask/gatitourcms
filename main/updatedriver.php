@@ -33,6 +33,8 @@ $xx['whatsappno'] = $_POST['whatsappno'];
 $xx['adharno'] = $_POST['adharno'];
 $xx['drivinglicense'] = $_POST['drivinglicense'];
 $xx['password'] = $_POST['password'];
+$xx['vehicleavailable'] = $_POST['vehicleavailable'];
+$xx['vehicletype'] = $_POST['vehicletype'];
 $xx['type'] = 3;
 $user = $obj->update("users", $xx, $_POST['id']);
 if ($user > 0) {

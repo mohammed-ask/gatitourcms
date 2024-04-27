@@ -29,6 +29,8 @@ $xx['trackenable'] = 'Yes';
 $xx['licenseexpiry'] = changedateformate($_POST['licenseexpiry']);
 $xx['whatsappno'] = $_POST['whatsappno'];
 $xx['adharno'] = $_POST['adharno'];
+$xx['vehicleavailable'] = $_POST['vehicleavailable'];
+$xx['vehicletype'] = $_POST['vehicletype'];
 $xx['drivinglicense'] = $_POST['drivinglicense'];
 if (isset($_POST['password'])) {
     $xx['password'] = $_POST['password'];

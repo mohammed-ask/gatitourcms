@@ -55,6 +55,23 @@ $rowuser = $obj->selectextrawhere("users", "id=" . $id . "")->fetch_assoc()
         </label>
     </div>
 
+    <div class="row mt-3">
+        <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+            <span class="text-gray-700 dark:text-gray-400">Vehicle Available</span>
+            <select data-bvalidator="required" class="form-control select2" name="vehicleavailable" id="vehicle">
+                <option <?= "Yes" == $rowuser['vehicleavailable'] ? "selected" : "" ?> value="Yes">Yes</option>
+                <option <?= "No" == $rowuser['vehicleavailable'] ? "selected" : "" ?> value="No">No</option>
+            </select>
+        </label>
+        <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+            <span class="text-gray-700 dark:text-gray-400">Vehicle Preference</span>
+            <select data-bvalidator="required" class="form-control select2" name="vehicletype" id="vehicle">
+                <option <?= "Both" == $rowuser['vehicletype'] ? "selected" : "" ?> value="Both">Both</option>
+                <option <?= "Automatic" == $rowuser['vehicletype'] ? "selected" : "" ?> value="Automatic">Automatic</option>
+                <option <?= "Semiautomatic" == $rowuser['vehicletype'] ? "selected" : "" ?> value="Semiautomatic">Semiautomatic</option>
+            </select>
+        </label>
+    </div>
     <div>
         <button type="submit" id="modalsubmit" class="w-full px-3 py-1 mt-6 text-sm font-medium hidden">
             Submit
