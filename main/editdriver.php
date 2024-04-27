@@ -65,7 +65,7 @@ $rowuser = $obj->selectextrawhere("users", "id=" . $id . "")->fetch_assoc()
         </label>
         <label class="col-6 block text-sm" style="margin-bottom: 5px;">
             <span class="text-gray-700 dark:text-gray-400">Vehicle Preference</span>
-            <select data-bvalidator="required" class="form-control select2" name="vehicletype" id="vehicle">
+            <select data-bvalidator="required" class="form-control select2" name="vehicletype" id="vehicletype">
                 <option <?= "Both" == $rowuser['vehicletype'] ? "selected" : "" ?> value="Both">Both</option>
                 <option <?= "Automatic" == $rowuser['vehicletype'] ? "selected" : "" ?> value="Automatic">Automatic</option>
                 <option <?= "Semiautomatic" == $rowuser['vehicletype'] ? "selected" : "" ?> value="Semiautomatic">Semiautomatic</option>
