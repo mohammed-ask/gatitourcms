@@ -60,7 +60,7 @@ include "templete.php";
             "ajax": "main/vehiclesdata.php",
             "processing": true,
             "serverSide": true,
-            "pageLength": 1000,
+            "pageLength": 30,
             "paging": true,
             "lengthChange": false,
             "searching": false,

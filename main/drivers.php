@@ -35,9 +35,9 @@ ob_start();
                         <th class="px-3 py-2">Whatsapp No.</th>
                         <th class="px-3 py-2">License No.</th>
                         <th class="px-3 py-2">Tracking Enabled</th>
+                        <th class="px-3 py-2">App Version</th>
                         <th class="px-3 py-2">License Expire</th>
                         <th class="px-3 py-2">License Photo</th>
-                        <th class="px-3 py-2">App Version</th>
                         <th class="px-3 py-2">Adhar</th>
                         <th class="px-3 py-2">Vehicles</th>
                         <th class="px-3 py-2">Tap on Whatsapp</th>
@@ -70,7 +70,7 @@ include "templete.php";
             "ajax": "main/driverdata.php",
             "processing": true,
             "serverSide": true,
-            "pageLength": 1000,
+            "pageLength": 30,
             "paging": true,
             "lengthChange": false,
             "searching": false,
