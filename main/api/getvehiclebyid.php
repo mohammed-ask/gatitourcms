@@ -243,30 +243,53 @@ function getAuthorizationHeader()
 
 if ($obj->checktoken()) {
 
-    // Query the database
-    $dev = $obj->selectextrawhereupdate("vehicles inner join users on users.id = vehicles.userid", "lat,`long`,users.name,mobile,whatsappno,vehicleno,vehicles.name as vname,avatar,vehicleid,seater,vehicles.userid as driverid,vehicles.id as drivervehicleid", "vehicleid = '" . $_GET['vehicleid'] . "' and vehicles.status = 1");
     $vdata = [];
-    while ($vrow = $obj->fetch_assoc($dev)) {
-        $datas = [
-            "driverName" => $vrow['name'],
-            "driverid" => $vrow['driverid'],
-            "vehicleid" => $vrow['drivervehicleid'],
-            "avatar" => $obj->fetchattachment($vrow['avatar']),
-            "mobile" => $vrow['mobile'],
-            "whatsapp" => $vrow['whatsappno'],
-            "latitude" => $vrow['lat'],
-            "longitude" => $vrow['long'],
-            "vehicleName" => $vrow["vname"],
-            "vehicleNo" => $vrow["vehicleno"],
-            "vehiclePhoto" => $obj->selectfieldwhere("vehiclenames", "path", "id=" . $vrow["vehicleid"] . ""),
-            "seats" => $vrow["seater"],
-            "svgicon" => $obj->selectfieldwhere("vehiclenames", "svgicon", "id=" . $vrow["vehicleid"] . ""),
-            "vehicleType" => $obj->selectfieldwhere("vehiclenames", "name", "id=" . $vrow["vehicleid"] . ""),
-        ];
-        array_push($vdata, $datas);
+    // Query the database
+    if ($_GET['vehicleid'] != 9) {
+        $dev = $obj->selectextrawhereupdate("vehicles inner join users on users.id = vehicles.userid", "lat,`long`,users.name,mobile,whatsappno,vehicleno,vehicles.name as vname,avatar,vehicleid,seater,vehicles.userid as driverid,vehicles.id as drivervehicleid", "vehicleid = '" . $_GET['vehicleid'] . "' and vehicles.status = 1");
+        while ($vrow = $obj->fetch_assoc($dev)) {
+            $datas = [
+                "driverName" => $vrow['name'],
+                "driverid" => $vrow['driverid'],
+                "vehicleid" => $vrow['drivervehicleid'],
+                "avatar" => $obj->fetchattachment($vrow['avatar']),
+                "mobile" => $vrow['mobile'],
+                "whatsapp" => $vrow['whatsappno'],
+                "latitude" => $vrow['lat'],
+                "longitude" => $vrow['long'],
+                "vehicleName" => $vrow["vname"],
+                "vehicleNo" => $vrow["vehicleno"],
+                "vehiclePhoto" => $obj->selectfieldwhere("vehiclenames", "path", "id=" . $vrow["vehicleid"] . ""),
+                "seats" => $vrow["seater"],
+                "svgicon" => $obj->selectfieldwhere("vehiclenames", "svgicon", "id=" . $vrow["vehicleid"] . ""),
+                "vehicleType" => $obj->selectfieldwhere("vehiclenames", "name", "id=" . $vrow["vehicleid"] . ""),
+            ];
+            array_push($vdata, $datas);
+        }
+        $data['vehicleInfo'] = $vdata;
+    } else {
+        $dev = $obj->selectextrawhereupdate("users", "lat,`long`,users.name,mobile,whatsappno,avatar,users.id as driverid", "vehicleavailable = 'No' and status =1");
+        while ($vrow = $obj->fetch_assoc($dev)) {
+            $datas = [
+                "driverName" => $vrow['name'],
+                "driverid" => $vrow['driverid'],
+                "vehicleid" => "",
+                "avatar" => $obj->fetchattachment($vrow['avatar']),
+                "mobile" => $vrow['mobile'],
+                "whatsapp" => $vrow['whatsappno'],
+                "latitude" => $vrow['lat'],
+                "longitude" => $vrow['long'],
+                "vehicleName" => "",
+                "vehicleNo" => "",
+                "vehiclePhoto" => "",
+                "seats" => $vrow["seater"],
+                "svgicon" => $obj->selectfieldwhere("vehiclenames", "svgicon", "id=" . $_GET["vehicleid"] . ""),
+                "vehicleType" => "",
+            ];
+            array_push($vdata, $datas);
+        }
+        $data['vehicleInfo'] = $vdata;
     }
-    $data['vehicleInfo'] = $vdata;
-
     // Check if data is found
     if (true) {
         // Return the data as JSON
