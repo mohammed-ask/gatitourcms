@@ -35,6 +35,8 @@ $xx['drivinglicense'] = $_POST['drivinglicense'];
 $xx['password'] = $_POST['password'];
 $xx['vehicleavailable'] = $_POST['vehicleavailable'];
 $xx['vehicletype'] = $_POST['vehicletype'];
+$xx['lat'] = $_POST['lat'];
+$xx['long'] = $_POST['long'];
 $xx['type'] = 3;
 $user = $obj->update("users", $xx, $_POST['id']);
 if ($user > 0) {

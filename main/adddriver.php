@@ -71,6 +71,19 @@
             </select>
         </label>
     </div>
+    <div class="row">
+        <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+            <span class="text-gray-700 dark:text-gray-400">Latitude</span>
+            <input type="text" id="lat" name="lat" class="form-control" />
+
+        </label>
+        <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+            <span class="text-gray-700 dark:text-gray-400">Longitude</span>
+            <input type="text" id="long" name="long" class="form-control" />
+
+        </label>
+
+    </div>
 
     <div>
         <button type="submit" id="modalsubmit" class="w-full px-3 py-1 mt-6 text-sm font-medium hidden">

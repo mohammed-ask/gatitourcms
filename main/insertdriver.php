@@ -31,6 +31,8 @@ $xx['whatsappno'] = $_POST['whatsappno'];
 $xx['adharno'] = $_POST['adharno'];
 $xx['vehicleavailable'] = $_POST['vehicleavailable'];
 $xx['vehicletype'] = $_POST['vehicletype'];
+$xx['lat'] = $_POST['lat'];
+$xx['long'] = $_POST['long'];
 $xx['drivinglicense'] = $_POST['drivinglicense'];
 if (isset($_POST['password'])) {
     $xx['password'] = $_POST['password'];
