@@ -87,6 +87,9 @@ switch ($request['path']) {
     case "$head/useractivity";
         require __DIR__ . '/main/useractivity.php';
         break;
+        // case "$head/ticketbooking";
+        //     require __DIR__ . '/main/ticketbooking.php';
+        //     break;
     case "$head/gitpull";
         require __DIR__ . '/main/guthubpull.php';
         break;
@@ -119,6 +122,9 @@ switch ($request['path']) {
         break;
     case "$head/api/checkphone";
         require __DIR__ . '/main/api/checkphone.php';
+        break;
+    case "$head/api/saveplayerid";
+        require __DIR__ . '/main/api/saveplayerid.php';
         break;
     default:
         http_response_code(404);
