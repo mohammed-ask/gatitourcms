@@ -31,15 +31,15 @@ $xx['whatsappno'] = $_POST['whatsappno'];
 $xx['adharno'] = $_POST['adharno'];
 $xx['vehicleavailable'] = $_POST['vehicleavailable'];
 $xx['vehicletype'] = $_POST['vehicletype'];
-$xx['lat'] = $_POST['lat'];
-$xx['long'] = $_POST['long'];
+if (isset($_POST['lat'])) {
+    $xx['lat'] = $_POST['lat'];
+    $xx['long'] = $_POST['long'];
+}
 $xx['drivinglicense'] = $_POST['drivinglicense'];
 if (isset($_POST['password'])) {
     $xx['password'] = $_POST['password'];
 }
 $xx['type'] = 3;
-$xx['lat'] = 0;
-$xx['long'] = 0;
 $user = $obj->insertnew("users", $xx);
 $red = !isset($_POST['password']) ? "index" : 'drivers';
 if ($user > 0) {
