@@ -7,7 +7,8 @@ header("Access-Control-Allow-Headers: *");
 header("Access-Control-Allow-Credentials: true");
 header('Content-Type: application/json');
 header('Access-Control-Request-Headers: *');
-
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 $host = "localhost";
 
 //Local Server
