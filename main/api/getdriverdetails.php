@@ -286,7 +286,7 @@ if ($obj->checktoken()) {
     $data["useractivity"] = mysqli_fetch_all($useractivity, true);
 
     $vids = $obj->selectfieldwhere("vehicles", "group_concat(vehicleid)", "userid =" . $dev['id'] . " and status = 1");
-    $useractivity = $obj->selectextrawhereupdate("ticketbooking", "name,`from`,`to`,pickupat,mobileno", "vehicleid in (" . $vids . ") and status =1");
+    $tbook = $obj->selectextrawhereupdate("ticketbooking", "name,`from`,`to`,pickupat,mobileno", "vehicleid in (" . $vids . ") and status =1");
     $data["ticketbooking"] = mysqli_fetch_all($tbook, true);
 
     // Check if data is found
