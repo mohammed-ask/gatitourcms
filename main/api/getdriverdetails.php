@@ -276,11 +276,17 @@ if ($obj->checktoken()) {
     $data['licenseexpiry'] = changedateformatespecito($dev['licenseexpiry'], "Y-m-d", 'd/m/Y');
     $data['avatar'] = $obj->fetchattachment($dev['avatar']);
     $data['helpline'] = $obj->selectfieldwhere("personal_detail", "phone", "status = 11");
+    $data['appupdatealert'] = $obj->selectfieldwhere("personal_detail", "appupdatealert", "status = 11");
+    $data['appversion'] = $obj->selectfieldwhere("personal_detail", "appversion", "status = 11");
     $vehicles = $obj->selectextrawhereupdate("vehicles inner join vehiclenames on vehiclenames.id = vehicles.vehicleid", "vehicles.name as vname,vehicleno,vehiclenames.name,seater", "userid=" . $dev['id'] . " and vehicles.status =1");
     $data["vehicles"] = mysqli_fetch_all($vehicles, true);
 
     $useractivity = $obj->selectextrawhereupdate("useractivity inner join users on users.id = useractivity.userid inner join vehicles on vehicles.id = useractivity.vehicleid", "users.name,vehicles.name as vname,tapon,useractivity.added_on", "useractivity.driverid=" . $dev['id'] . " and useractivity.status =1");
     $data["useractivity"] = mysqli_fetch_all($useractivity, true);
+
+    $vids = $obj->selectfieldwhere("vehicles", "group_concat(vehicleid)", "userid =" . $dev['id'] . "");
+    $useractivity = $obj->selectextrawhereupdate("ticketbooking", "name,from,to,pickupat,mobileno", "vehicleid in (" . $vids . ") and status =1");
+    $data["ticketbooking"] = mysqli_fetch_all($tbook, true);
 
     // Check if data is found
     if ($dev > 0) {
