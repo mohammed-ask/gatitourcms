@@ -68,6 +68,14 @@
         </a>
       </li>
     </ul>
+    <ul>
+      <li class="relative px-6 py-2">
+        <a class="inline-flex items-center w-full  font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="ticketbooking">
+          <i style="color: #057c7c;" class="fa-solid fa-user-clock"></i>
+          <span class="ml-3">Ticket Booking</span>
+        </a>
+      </li>
+    </ul>
     <?php //if (in_array(25, $permissions)) { 
     ?>
     <ul>
