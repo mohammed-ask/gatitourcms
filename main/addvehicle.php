@@ -15,7 +15,7 @@ include "session.php";
         <select data-bvalidator="required" class="form-control select2" name="userid" id="driver">
             <option value="">Select Driver</option>
             <?php
-            $drivers = $obj->selectextrawhereupdate("users", "id,name", "status = 1 and type = 3 ");
+            $drivers = $obj->selectextrawhereupdate("users", "id,name", "status = 1 and type = 3 order by id desc");
             $driver = mysqli_fetch_all($drivers);
             foreach ($driver as list($id, $name)) { ?>
                 <option value="<?php echo $id; ?>"> <?php echo $name; ?></option>
