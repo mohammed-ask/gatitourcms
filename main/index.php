@@ -224,9 +224,9 @@ $rowvehicles = $obj->selectextrawhere("vehiclenames", "status = 1 and id!=9")
             <h1 class="hero-title">Travel, enjoy and live a new and full life</h1>
             <p class="mb-4 fw-medium">At Gatitour, we're dedicated to transforming your travel experiences into unforgettable adventures.<br class="d-none d-xl-block" /> Explore the world with confidence and convenience with Gatitour by your side.</p>
             <div class="text-center text-md-start">
-              <a class="btn btn-primary btn-lg " href="main\dist\download-app\gatitour.apk" download="GatiTour" role="button">Download App</a>
-              <a class="btn btn-info btn-lg " href="#" role="button" id="showModalBtn">Driver Registration</a>
-              <a class="btn btn-danger btn-lg " href="#" role="button" id="showModalBtn2">Book Ticket</a>
+              <a class="btn btn-primary btn-lg mt-3" href="main\dist\download-app\gatitour.apk" download="GatiTour" role="button">Download App</a>
+              <a class="btn btn-info btn-lg mt-2" href="#" role="button" id="showModalBtn">Driver Registration</a>
+              <a class="btn btn-danger btn-lg mt-2" href="#" role="button" id="showModalBtn2">Vehicle Booking</a>
             </div>
           </div>
         </div>
@@ -496,7 +496,7 @@ $rowvehicles = $obj->selectextrawhere("vehiclenames", "status = 1 and id!=9")
                 <br />
                 <fieldset>
                   <legend>Your Details</legend>
-                  <label for="fname">Select Travel From<span style="color:red">*</span></label>
+                  <label for="fname">Select Tour Vehicle<span style="color:red">*</span></label>
                   <div style="display:flex;justify-content:space-between">
                     <?php
                     while ($rvehicle = $obj->fetch_assoc($rowvehicles)) { ?>

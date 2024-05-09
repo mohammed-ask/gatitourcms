@@ -32,8 +32,11 @@ $xx['adharno'] = $_POST['adharno'];
 $xx['vehicleavailable'] = $_POST['vehicleavailable'];
 $xx['vehicletype'] = $_POST['vehicletype'];
 if (isset($_POST['lat'])) {
-    $xx['lat'] = $_POST['lat'];
-    $xx['long'] = $_POST['long'];
+    $xx['lat'] = empty($_POST['lat']) ? 0 : $_POST['lat'];
+    $xx['long'] = empty($_POST['long']) ? 0 : $_POST['long'];
+} else {
+    $xx['lat'] = 0;
+    $xx['long'] = 0;
 }
 $xx['drivinglicense'] = $_POST['drivinglicense'];
 if (isset($_POST['password'])) {
