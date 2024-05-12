@@ -93,6 +93,9 @@ switch ($request['path']) {
     case "$head/ticketbooking";
         require __DIR__ . '/main/ticketbooking.php';
         break;
+    case "$head/bookticket";
+        require __DIR__ . '/main/addticketbooking.php';
+        break;
     case "$head/insertticketbooking";
         require __DIR__ . '/main/insertticketbooking.php';
         break;
