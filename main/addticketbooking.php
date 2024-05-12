@@ -201,7 +201,7 @@ $rowvehicles = $obj->selectextrawhere("vehiclenames", "status = 1 and id!=9")
         <fieldset>
             <legend>Your Details</legend>
             <label for="fname">Select Tour Vehicle<span style="color:red">*</span></label>
-            <div style="display:flex;justify-content:space-between">
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between">
                 <?php
                 while ($rvehicle = $obj->fetch_assoc($rowvehicles)) { ?>
                     <div class="vtype" style="align-items: center;justify-content:center;text-align:center;cursor:pointer">
