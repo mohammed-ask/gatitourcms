@@ -226,7 +226,7 @@ $rowvehicles = $obj->selectextrawhere("vehiclenames", "status = 1 and id!=9")
             <div class="text-center text-md-start">
               <a class="btn btn-primary btn-lg mt-3" href="main\dist\download-app\gatitour.apk" download="GatiTour" role="button">Download App</a>
               <a class="btn btn-info btn-lg mt-2" href="#" role="button" id="showModalBtn">Driver Registration</a>
-              <a class="btn btn-danger btn-lg mt-2" href="bookticket">Vehicle Booking</a>
+              <a class="btn btn-danger btn-lg mt-2" href="vehiclebooking">Vehicle Booking</a>
             </div>
           </div>
         </div>
