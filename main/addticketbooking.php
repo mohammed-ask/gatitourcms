@@ -259,11 +259,11 @@ $rowvehicles = $obj->selectextrawhere("vehiclenames", "status = 1 and id!=9")
             <div class="colums">
                 <div class="item">
                     <label for="from">Travel From<span>*</span></label>
-                    <input data-bvalidator="required" data-bvalidator="required" id="from" type="text" name="from" />
+                    <input id="symbol" data-bvalidator="required" data-bvalidator="required" id="from" type="text" name="from" />
                 </div>
                 <div class="item">
                     <label for="to">Travel To<span>*</span></label>
-                    <input data-bvalidator="required" data-bvalidator="required" id="to" type="text" name="to" />
+                    <input id="symbol2" data-bvalidator="required" data-bvalidator="required" id="to" type="text" name="to" />
                 </div>
                 <div class="item">
                     <label for="pickupat">Pickup Date<span>*</span></label>
@@ -348,5 +348,55 @@ $rowvehicles = $obj->selectextrawhere("vehiclenames", "status = 1 and id!=9")
             $(this).find(".carhead").css("color", "white")
             // alert(t);
         });
+
+        $("#symbol").autocomplete({
+            minLength: 3,
+            source: function(request, response) {
+                $.ajax({
+                    type: "post",
+                    url: "main/fetchcitysearch.php",
+                    data: {
+                        search: request.term
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        response(data)
+                    }
+                });
+            },
+            select: function(event, ui) {
+                event.preventDefault();
+                $("#symbol").val(ui.item.value);
+            },
+        })
+
+        function getStringUptoLastComma(input) {
+            const result = input.substring(0, input.lastIndexOf(",")).trim();
+            return result ? result + "," : '';
+
+        }
+        $("#symbol2").autocomplete({
+            minLength: 3,
+            source: function(request, response) {
+                const lastCity = request.term.substring(request.term.lastIndexOf(",") + 1)
+                $.ajax({
+                    type: "post",
+                    url: "main/fetchcitysearch.php",
+                    data: {
+                        search: lastCity
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        response(data)
+                    }
+                });
+            },
+            select: function(event, ui) {
+                event.preventDefault();
+                let oldval = getStringUptoLastComma($("#symbol2").val())
+
+                $("#symbol2").val(oldval + ui.item.value + ",");
+            },
+        })
     });
 </script>
