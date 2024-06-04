@@ -1,7 +1,7 @@
 <?php
 include "function.php";
 include "conn.php";
-$rowvehicles = $obj->selectextrawhere("vehiclenames", "status = 1 and id!=9")
+$rowvehicles = $obj->selectextrawhere("vehiclenames", "status = 1")
 ?>
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
@@ -15,7 +15,7 @@ $rowvehicles = $obj->selectextrawhere("vehiclenames", "status = 1 and id!=9")
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>GatiTour | Travel Agency Landing Page UI</title>
+    <title>Tour travels agency car on rent hire taxi vehicle maxx toofan tampo traveller bus ticket booking all over India map gps track</title>
 
 
     <!-- ===============================================-->

@@ -73,6 +73,12 @@
     </div>
     <div class="row">
         <label class="col-6 block text-sm" style="margin-bottom: 5px;">
+            <span class="text-gray-700 dark:text-gray-400">Link</span>
+            <input type="text" id="link" name="link" class="form-control" />
+        </label>
+    </div>
+    <div class="row">
+        <label class="col-6 block text-sm" style="margin-bottom: 5px;">
             <span class="text-gray-700 dark:text-gray-400">Latitude</span>
             <input type="text" id="lat" name="lat" class="form-control" />
 

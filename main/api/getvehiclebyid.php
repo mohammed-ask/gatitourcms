@@ -268,11 +268,12 @@ if ($obj->checktoken()) {
         }
         $data['vehicleInfo'] = $vdata;
     } else {
-        $dev = $obj->selectextrawhereupdate("users", "lat,`long`,users.name,mobile,whatsappno,avatar,users.id as driverid", "vehicleavailable = 'No' and status =1");
+        $dev = $obj->selectextrawhereupdate("users", "link,lat,`long`,users.name,mobile,whatsappno,avatar,users.id as driverid", "vehicleavailable = 'No' and status =1");
         while ($vrow = $obj->fetch_assoc($dev)) {
             $datas = [
                 "driverName" => $vrow['name'],
                 "driverid" => $vrow['driverid'],
+                "link" => $vrow['link'],
                 "vehicleid" => "",
                 "avatar" => $obj->fetchattachment($vrow['avatar']),
                 "mobile" => $vrow['mobile'],

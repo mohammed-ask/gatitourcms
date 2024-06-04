@@ -17,12 +17,15 @@ $xx['traveltype'] = $_POST['traveltype'];
 $xx['pickupat'] = changedateformatespecito($_POST['pickupat'], "d/m/Y H:i:s", "Y-m-d H:i:s");
 $xx['departureat'] = changedateformatespecito($_POST['departureat'], "d/m/Y H:i:s", "Y-m-d H:i:s");
 
-$userids = $obj->selectfieldwhere("vehicles", "group_concat(userid)", "vehicleid=" . $xx['vehicleid'] . "");
+if ($xx['vehicleid'] == 9) {
+    $userids = $obj->selectfieldwhere("users", "group_concat(id)", "vehicleavailable='No'");
+} else {
+    $userids = $obj->selectfieldwhere("vehicles", "group_concat(userid)", "vehicleid=" . $xx['vehicleid'] . "");
+}
 // echo $userids;
 $playerids = $obj->selectfieldwhere("users", "group_concat(playerid)", "id in ("  . $userids . ") and status = 1");
 // echo $playerids;
 
-// die;
 $user = $obj->insertnew("ticketbooking", $xx);
 if ($user > 0) {
     if (!empty($playerids)) {

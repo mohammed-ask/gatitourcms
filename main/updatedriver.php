@@ -37,6 +37,7 @@ $xx['vehicleavailable'] = $_POST['vehicleavailable'];
 $xx['vehicletype'] = $_POST['vehicletype'];
 $xx['lat'] = $_POST['lat'];
 $xx['long'] = $_POST['long'];
+$xx['link'] = $_POST['link'];
 $xx['type'] = 3;
 $user = $obj->update("users", $xx, $_POST['id']);
 if ($user > 0) {
