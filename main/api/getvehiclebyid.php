@@ -246,7 +246,7 @@ if ($obj->checktoken()) {
     $vdata = [];
     // Query the database
     if ($_GET['vehicleid'] != 9) {
-        $dev = $obj->selectextrawhereupdate("vehicles inner join users on users.id = vehicles.userid", "lat,`long`,users.name,mobile,whatsappno,vehicleno,vehicles.name as vname,avatar,vehicleid,seater,vehicles.userid as driverid,vehicles.id as drivervehicleid", "vehicleid = '" . $_GET['vehicleid'] . "' and vehicles.status = 1");
+        $dev = $obj->selectextrawhereupdate("vehicles inner join users on users.id = vehicles.userid", "link,lat,`long`,users.name,mobile,whatsappno,vehicleno,vehicles.name as vname,avatar,vehicleid,seater,vehicles.userid as driverid,vehicles.id as drivervehicleid", "vehicleid = '" . $_GET['vehicleid'] . "' and vehicles.status = 1");
         while ($vrow = $obj->fetch_assoc($dev)) {
             $datas = [
                 "driverName" => $vrow['name'],
@@ -259,6 +259,7 @@ if ($obj->checktoken()) {
                 "longitude" => $vrow['long'],
                 "vehicleName" => $vrow["vname"],
                 "vehicleNo" => $vrow["vehicleno"],
+                "link" => $vrow["link"],
                 "vehiclePhoto" => $obj->selectfieldwhere("vehiclenames", "path", "id=" . $vrow["vehicleid"] . ""),
                 "seats" => $vrow["seater"],
                 "svgicon" => $obj->selectfieldwhere("vehiclenames", "svgicon", "id=" . $vrow["vehicleid"] . ""),
