@@ -73,7 +73,7 @@ include "templete.php";
             "pageLength": 30,
             "paging": true,
             "lengthChange": false,
-            "searching": false,
+            "searching": true,
             "ordering": true,
             "info": true,
             "autoWidth": false,

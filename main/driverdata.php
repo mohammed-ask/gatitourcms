@@ -25,14 +25,14 @@ if (!empty($ocoloum)) {
 $search = "";
 if (isset($_GET['search']['value']) && !empty($_GET['search']['value'])) {
     $sv = $_GET['search']['value'];
-    $search .= " and (users.name like '%$sv%' or users.email like '%$sv%')";
+    $search .= " and (users.mobile like '%$sv%' or users.whatsappno like '%$sv%')";
 }
-if ((isset($_GET['columns'][0]["search"]["value"])) && (!empty($_GET['columns'][0]["search"]["value"]))) {
-    $search .= " and users.name like '" . $_GET['columns'][0]["search"]["value"] . "'";
-}
-if ((isset($_GET['columns'][1]["search"]["value"])) && (!empty($_GET['columns'][1]["search"]["value"]))) {
-    $search .= " and users.email like '" . $_GET['columns'][1]["search"]["value"] . "'";
-}
+// if ((isset($_GET['columns'][0]["search"]["value"])) && (!empty($_GET['columns'][0]["search"]["value"]))) {
+//     $search .= " and users.name like '" . $_GET['columns'][0]["search"]["value"] . "'";
+// }
+// if ((isset($_GET['columns'][1]["search"]["value"])) && (!empty($_GET['columns'][1]["search"]["value"]))) {
+//     $search .= " and users.email like '" . $_GET['columns'][1]["search"]["value"] . "'";
+// }
 $return['recordsTotal'] = $obj->selectfieldwhere("users  ", "count(users.id)", "status=1 and type= 3 ");
 $return['recordsFiltered'] = $obj->selectfieldwhere("users ", "count(users.id)", "status=1 and type= 3 $search ");
 $return['draw'] = $_GET['draw'];
