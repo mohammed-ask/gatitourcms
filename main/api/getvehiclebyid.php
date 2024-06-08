@@ -246,27 +246,28 @@ if ($obj->checktoken()) {
     $vdata = [];
     // Query the database
     if ($_GET['vehicleid'] != 9) {
-        $dev = $obj->selectextrawhereupdate("vehicles inner join users on users.id = vehicles.userid", "link,lat,`long`,users.name,mobile,whatsappno,vehicleno,vehicles.name as vname,avatar,vehicleid,seater,vehicles.userid as driverid,vehicles.id as drivervehicleid", "vehicleid = '" . $_GET['vehicleid'] . "' and vehicles.status = 1");
-        while ($vrow = $obj->fetch_assoc($dev)) {
-            $datas = [
-                "driverName" => $vrow['name'],
-                "driverid" => $vrow['driverid'],
-                "vehicleid" => $vrow['drivervehicleid'],
-                "avatar" => $obj->fetchattachment($vrow['avatar']),
-                "mobile" => $vrow['mobile'],
-                "whatsapp" => $vrow['whatsappno'],
-                "latitude" => $vrow['lat'],
-                "longitude" => $vrow['long'],
-                "vehicleName" => $vrow["vname"],
-                "vehicleNo" => $vrow["vehicleno"],
-                "link" => $vrow["link"],
-                "vehiclePhoto" => $obj->selectfieldwhere("vehiclenames", "path", "id=" . $vrow["vehicleid"] . ""),
-                "seats" => $vrow["seater"],
-                "svgicon" => $obj->selectfieldwhere("vehiclenames", "svgicon", "id=" . $vrow["vehicleid"] . ""),
-                "vehicleType" => $obj->selectfieldwhere("vehiclenames", "name", "id=" . $vrow["vehicleid"] . ""),
-            ];
-            array_push($vdata, $datas);
-        }
+        $dev = $obj->selectextrawhereupdate("vehicles inner join users on users.id = vehicles.userid inner join vehiclenames on vehiclenames.id = vehicles.vehicleid", "link,lat as latitude,`long` as longitude,users.name as driverName,mobile,whatsappno as whatsapp,vehicleno,vehicles.name as vehicleName,avatar,seater as seats,vehicles.userid as driverid,vehicles.id as vehicleid,vehiclenames.path as vehiclePhoto,svgicon,vehicleType", "vehicleid = '" . $_GET['vehicleid'] . "' and vehicles.status = 1");
+        $vdata = mysqli_fetch_all($dev, true);
+        // while ($vrow = $obj->fetch_assoc($dev)) {
+        //     $datas = [
+        //         "driverName" => $vrow['name'],
+        //         "driverid" => $vrow['driverid'],
+        //         "vehicleid" => $vrow['drivervehicleid'],
+        //         "avatar" => $obj->fetchattachment($vrow['avatar']),
+        //         "mobile" => $vrow['mobile'],
+        //         "whatsapp" => $vrow['whatsappno'],
+        //         "latitude" => $vrow['lat'],
+        //         "longitude" => $vrow['long'],
+        //         "vehicleName" => $vrow["vname"],
+        //         "vehicleNo" => $vrow["vehicleno"],
+        //         "link" => $vrow["link"],
+        //         "vehiclePhoto" => $obj->selectfieldwhere("vehiclenames", "path", "id=" . $vrow["vehicleid"] . ""),
+        //         "seats" => $vrow["seater"],
+        //         "svgicon" => $obj->selectfieldwhere("vehiclenames", "svgicon", "id=" . $vrow["vehicleid"] . ""),
+        //         "vehicleType" => $obj->selectfieldwhere("vehiclenames", "name", "id=" . $vrow["vehicleid"] . ""),
+        //     ];
+        //     array_push($vdata, $datas);
+        // }
         $data['vehicleInfo'] = $vdata;
     } else {
         $dev = $obj->selectextrawhereupdate("users", "link,lat,`long`,users.name,mobile,whatsappno,avatar,users.id as driverid", "vehicleavailable = 'No' and status =1");
