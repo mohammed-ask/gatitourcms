@@ -246,7 +246,7 @@ if ($obj->checktoken()) {
     $vdata = [];
     // Query the database
     if ($_GET['vehicleid'] != 9) {
-        $dev = $obj->selectextrawhereupdate("vehicles inner join users on users.id = vehicles.userid inner join vehiclenames on vehiclenames.id = vehicles.vehicleid", "link,lat as latitude,`long` as longitude,users.name as driverName,mobile,whatsappno as whatsapp,vehicleno,vehicles.name as vehicleName,avatar,seater as seats,vehicles.userid as driverid,vehicles.id as vehicleid,vehiclenames.path as vehiclePhoto,svgicon,vehicleType", "vehicleid = '" . $_GET['vehicleid'] . "' and vehicles.status = 1");
+        $dev = $obj->selectextrawhereupdate("vehicles inner join users on users.id = vehicles.userid inner join vehiclenames on vehiclenames.id = vehicles.vehicleid", "link,lat as latitude,`long` as longitude,users.name as driverName,mobile,whatsappno as whatsapp,vehicleno,vehicles.name as vehicleName,avatar,seater as seats,vehicles.userid as driverid,vehicles.id as vehicleid,vehiclenames.path as vehiclePhoto,vehicleType", "vehicleid = '" . $_GET['vehicleid'] . "' and vehicles.status = 1");
         $vdata = mysqli_fetch_all($dev, true);
         // while ($vrow = $obj->fetch_assoc($dev)) {
         //     $datas = [
@@ -269,6 +269,7 @@ if ($obj->checktoken()) {
         //     array_push($vdata, $datas);
         // }
         $data['vehicleInfo'] = $vdata;
+        $data['svgicon'] = $obj->selectfieldwhere("vehiclenames", "svgicon", "id=" . $_GET['vehicleid'] . "");
     } else {
         $dev = $obj->selectextrawhereupdate("users", "link,lat,`long`,users.name,mobile,whatsappno,avatar,users.id as driverid", "vehicleavailable = 'No' and status =1");
         while ($vrow = $obj->fetch_assoc($dev)) {
