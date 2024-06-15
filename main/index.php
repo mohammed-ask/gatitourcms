@@ -222,7 +222,7 @@ $rowvehicles = $obj->selectextrawhere("vehiclenames", "status = 1 and id!=9")
           <div class="col-md-7 col-lg-6 text-md-start text-center py-6">
             <h4 class="fw-bold text-danger mb-3">Best Destinations around the India</h4>
             <h1 class="hero-title">Travel, enjoy and live a new and full life</h1>
-            <p class="mb-4 fw-medium">At Gatitour, we're dedicated to transforming your travel experiences into unforgettable adventures.<br class="d-none d-xl-block" /> Explore the world with confidence and convenience with Gatitour by your side.</p>
+            <p class="mb-4 fw-medium">At Gatitour, we're dedicated to transforming your travel experiences into unforgettable adventures.<br class="d-none d-xl-block" /> Explore the world with confidence and convenience with Gatitour by your .</p>
             <div class="text-center text-md-start">
               <a class="btn btn-primary btn-lg mt-3" href="main\dist\download-app\gatitour.apk" download="GatiTour" role="button">Download App</a>
               <a class="btn btn-info btn-lg mt-2" href="#" role="button" id="showModalBtn">Driver Registration</a>
