@@ -287,12 +287,13 @@ if ($obj->checktoken()) {
                 "vehicleNo" => "",
                 "vehiclePhoto" => "",
                 "seats" => $vrow["seater"],
-                "svgicon" => $obj->selectfieldwhere("vehiclenames", "svgicon", "id=" . $_GET["vehicleid"] . ""),
+                // "svgicon" => $obj->selectfieldwhere("vehiclenames", "svgicon", "id=" . $_GET["vehicleid"] . ""),
                 "vehicleType" => "",
             ];
             array_push($vdata, $datas);
         }
         $data['vehicleInfo'] = $vdata;
+        $data['svgicon'] = $obj->selectfieldwhere("vehiclenames", "svgicon", "id=" . $_GET['vehicleid'] . "");
     }
     // Check if data is found
     if (true) {
