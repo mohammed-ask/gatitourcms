@@ -193,10 +193,16 @@ $rowvehicles = $obj->selectextrawhere("vehiclenames", "status = 1")
 
 <body>
     <form id="tbook">
-        <div class="">
-            <!-- <h1>Donation Form</h1> -->
+        <div style="position: relative;">
             <img style="object-fit:cover;width:100%;height:300px" src='main/uploads/vehicle/bustravel.jpg' />
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; background-color: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 5px; text-align: center;">
+                <h3 style="color: white; margin: 0;">
+                    Download our application to easily book a ride or choose a driver.
+                </h3>
+                <a class="btn btn-info btn-lg mt-3" href="main/dist/download-app/thegatitour.apk" download="GatiTour" role="button">Download App</a>
+            </div>
         </div>
+
         <br />
         <fieldset>
             <legend>Your Details</legend>
