@@ -29,60 +29,65 @@
       </ul>
     <?php } ?>
 
-    <?php //if (in_array(15, $permissions)) { 
+    <?php if (in_array(4, $permissions)) {
     ?>
-    <ul>
-      <li class="relative px-6 py-2">
-        <a class="inline-flex items-center w-full  font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="customers">
-          <i style="color: #057c7c;" class="fa-solid fa-user-clock"></i>
-          <span class="ml-3">Customer List</span>
-        </a>
-      </li>
-    </ul>
-    <?php //} 
+      <ul>
+        <li class="relative px-6 py-2">
+          <a class="inline-flex items-center w-full  font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="customers">
+            <i style="color: #057c7c;" class="fa-solid fa-user-clock"></i>
+            <span class="ml-3">Customer List</span>
+          </a>
+        </li>
+      </ul>
+    <?php }
     ?>
-    <ul>
-      <li class="relative px-6 py-2">
-        <a class="inline-flex items-center w-full  font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="useractivity">
-          <i style="color: #057c7c;" class="fa-solid fa-user-clock"></i>
-          <span class="ml-3">Customer Activity</span>
-        </a>
-      </li>
-    </ul>
-    <ul>
-      <li class="relative px-6 py-2">
-        <a class="inline-flex items-center w-full  font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="ticketbooking">
-          <i style="color: #057c7c;" class="fa-solid fa-user-clock"></i>
-          <span class="ml-3">Vehicle Booking</span>
-        </a>
-      </li>
-    </ul>
-    <?php //if (in_array(25, $permissions)) { 
+    <?php if (in_array(19, $permissions)) { ?>
+
+      <ul>
+        <li class="relative px-6 py-2">
+          <a class="inline-flex items-center w-full  font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="useractivity">
+            <i style="color: #057c7c;" class="fa-solid fa-user-clock"></i>
+            <span class="ml-3">Customer Activity</span>
+          </a>
+        </li>
+      </ul>
+    <?php } ?>
+    <?php if (in_array(17, $permissions)) { ?>
+      <ul>
+        <li class="relative px-6 py-2">
+          <a class="inline-flex items-center w-full  font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="ticketbooking">
+            <i style="color: #057c7c;" class="fa-solid fa-user-clock"></i>
+            <span class="ml-3">Vehicle Booking</span>
+          </a>
+        </li>
+      </ul>
+    <?php } ?>
+    <?php if (in_array(20, $permissions)) {
     ?>
-    <ul>
-      <li class="relative px-6 py-2">
-        <a class="inline-flex items-center w-full  font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="drivers">
-          <i style="color: #057c7c;" class="fa-solid fa-indian-rupee-sign"></i>
-          <span class="ml-4">Drivers</span>
-        </a>
-      </li>
-    </ul>
-    <?php //} 
+      <ul>
+        <li class="relative px-6 py-2">
+          <a class="inline-flex items-center w-full  font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="drivers">
+            <i style="color: #057c7c;" class="fa-solid fa-indian-rupee-sign"></i>
+            <span class="ml-4">Drivers</span>
+          </a>
+        </li>
+      </ul>
+    <?php }
     ?>
 
-    <?php //if (in_array(29, $permissions)) { 
+    <?php if (in_array(13, $permissions)) {
     ?>
-    <ul>
-      <li class="relative px-6 py-2">
-        <a class="inline-flex items-center w-full  font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="vehicles">
-          <i style="color: #057c7c;" class="fa-solid fa-money-bill-transfer"></i>
-          <span class="ml-3">Vehicles</span>
-        </a>
-      </li>
-    </ul>
-    <?php //} 
+      <ul>
+        <li class="relative px-6 py-2">
+          <a class="inline-flex items-center w-full  font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="vehicles">
+            <i style="color: #057c7c;" class="fa-solid fa-money-bill-transfer"></i>
+            <span class="ml-3">Vehicles</span>
+          </a>
+        </li>
+      </ul>
+    <?php }
     ?>
-    <?php if (in_array(8, $permissions)) { ?>
+    <?php if (in_array(12, $permissions)) { ?>
       <ul>
         <li class="relative px-6 py-2">
           <a class="inline-flex items-center w-full  font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="employeelist">
