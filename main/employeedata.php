@@ -48,7 +48,7 @@ while ($row = $obj->fetch_assoc($result)) {
     $n[] = $i;
     $n[] = $row['name'];
     $n[] = $row['mobile'];
-    $n[] = $row['role'];
+    $n[] = $obj->selectfieldwhere("roles", "name", "status=1 and id= " . $row['role'] . "");
     $a = "";
     // if (in_array(26, $permissions)) {
     $a .=  "<a class='px-4 py-2 ml-1 text-sm font-medium leading-5 text-white  bg-primary  rounded-lg' @click='openModal'  onclick='dynamicmodal(\"" . $row['id'] . "\", \"editemployee\", \"\", \"\")'  aria-label='Go'>
