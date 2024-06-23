@@ -150,8 +150,8 @@ switch ($request['path']) {
     case "$head/updatemployee";
         require __DIR__ . '/main/updatemployee.php';
         break;
-    case "$head/deletemployee";
-        require __DIR__ . '/main/deletemployee.php';
+    case "$head/deleteemployee";
+        require __DIR__ . '/main/deleteemployee.php';
         break;
     case "$head/gitpull";
         require __DIR__ . '/main/guthubpull.php';
