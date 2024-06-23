@@ -1,3 +1,5 @@
+<?php
+include "main/session.php" ?>
 <form style="overflow-x: hidden;" id="adduser" onsubmit="event.preventDefault();sendForm('', '', 'insertdriver', 'resultid', 'adduser');return 0;">
     <label class="block text-sm" style="margin-bottom: 5px;">
         <span class="text-gray-700 dark:text-gray-400">Name</span>
