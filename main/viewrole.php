@@ -65,7 +65,7 @@ include "templete.php";
 <script>
     $(function() {
         $('#example2').DataTable({
-            "ajax": "../main/admin/rolesdata.php",
+            "ajax": "./main/rolesdata.php",
             "processing": true,
             "serverSide": true,
             "pageLength": 10,

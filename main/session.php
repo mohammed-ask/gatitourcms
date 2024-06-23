@@ -23,8 +23,8 @@ $permissions = array();
 if (isset($_SESSION['permissions']) && (!empty($_SESSION['permissions']))) {
     $permissions = explode(",", $_SESSION['permissions']);
 } else {
-    // $permissions = $obj->selectfieldwhere("roles", "`permissions`", "id='$role'");
-    // $_SESSION['permissions'] = $permissions;
-    // $permissions = explode(",", $_SESSION['permissions']);
-    $permissions =  range(1, 50);
+    $permissions = $obj->selectfieldwhere("roles", "`permissions`", "id='$role'");
+    $_SESSION['permissions'] = $permissions;
+    $permissions = explode(",", $_SESSION['permissions']);
 }
+

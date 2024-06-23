@@ -82,7 +82,7 @@ $pagemeta = "Some Meta Goes Here";
 $pagekeywords = "Some keywords Goes here";
 $contentheader = "Edit Permission details";
 
-include "main/admin/templete.php";
+include "main/templete.php";
 ?>
 <script>
     $(document).ready(function() {

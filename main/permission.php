@@ -23,7 +23,7 @@ if (isset($_GET["hakuna"])) {
     <div class="card-header with-border">
         <h3 class="card-title with-border">Permission List</h3>
         <div class="card-tools pull-right">
-            <?php if (in_array(82, $permissions)) { ?>
+            <?php if (in_array(1, $permissions)) { ?>
                 <a href="addpermission" class="px-4 py-2 text-sm bg-purple rounded-lg">+ Add New Permission
                 </a>
             <?php } ?>
@@ -93,7 +93,7 @@ include "templete.php";
         });
         table = $("#example1").DataTable({
             "responsive": <?= $responsive ?>,
-            "ajax": "../main/admin/permissionsdata.php",
+            "ajax": "./main/permissionsdata.php",
             "processing": true,
             "serverSide": true,
             "pageLength": 15,
