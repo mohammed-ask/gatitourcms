@@ -1,18 +1,18 @@
 <?php
 include "main/session.php" ?>
-<form style="overflow-x: hidden;" id="adduser" onsubmit="event.preventDefault();sendForm('', '', 'insertdriver', 'resultid', 'adduser');return 0;">
+<form style="overflow-x: hidden;" id="adduser" onsubmit="event.preventDefault();sendForm('', '', 'insertemployee', 'resultid', 'adduser');return 0;">
     <label class="block text-sm" style="margin-bottom: 5px;">
         <span class="text-gray-700 dark:text-gray-400">Name</span>
-        <input name="name" data-bvalidator="required" class="form-control" placeholder="Driver's Name" />
+        <input name="name" data-bvalidator="required" class="form-control" placeholder="Employee's Name" />
     </label>
     <!-- <label class="block text-sm" style="margin-bottom: 5px;">
         <span class="text-gray-700 dark:text-gray-400">Email</span>
-        <input name="email" data-bvalidator="required,email" class="form-control" placeholder="Driver's Email ID" />
+        <input name="email" data-bvalidator="required,email" class="form-control" placeholder="Employee's Email ID" />
     </label> -->
     <div class="row">
         <label class="col-6 block text-sm" style="margin-bottom: 5px;">
             <span class="text-gray-700 dark:text-gray-400">Mob No.</span>
-            <input data-bvalidator="required,digit,minlength[10],maxlength[10]" name="mobile" class="form-control" placeholder="Driver's Mobile No." />
+            <input data-bvalidator="required,digit,minlength[10],maxlength[10]" name="mobile" class="form-control" placeholder="Employee's Mobile No." />
         </label>
         <label class="col-6 block text-sm" style="margin-bottom: 5px;">
             <span class="text-gray-700 dark:text-gray-400">Password</span>
