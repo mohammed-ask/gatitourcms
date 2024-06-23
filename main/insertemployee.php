@@ -18,34 +18,14 @@ $xx['added_by'] = 0;
 $xx['updated_on'] = date('Y-m-d H:i:s');
 $xx['updated_by'] = 0;
 $xx['status'] = 1;
-$path = 'main/uploads/driver';
-$xx['avatar'] = $obj->uploadfilenew($path, $_FILES, "avatar",  array("jpg", "jpeg", "png"));
-$xx['licensephoto'] = $obj->uploadfilenew($path, $_FILES, "license",  array("jpg", "jpeg", "png"));
 $xx['name'] = ucwords($_POST['name']);
 // $xx['email'] = $_POST['email'];
 $xx['mobile'] = $_POST['mobile'];
-$xx['city'] = $_POST['city'];
-$xx['trackenable'] = 'Yes';
-$xx['licenseexpiry'] = changedateformate($_POST['licenseexpiry']);
-$xx['whatsappno'] = $_POST['whatsappno'];
-$xx['adharno'] = $_POST['adharno'];
-$xx['vehicleavailable'] = $_POST['vehicleavailable'];
-$xx['vehicletype'] = $_POST['vehicletype'];
-$xx['link'] = $_POST['link'];
-if (isset($_POST['lat'])) {
-    $xx['lat'] = empty($_POST['lat']) ? 0 : $_POST['lat'];
-    $xx['long'] = empty($_POST['long']) ? 0 : $_POST['long'];
-} else {
-    $xx['lat'] = 0;
-    $xx['long'] = 0;
-}
-$xx['drivinglicense'] = $_POST['drivinglicense'];
-if (isset($_POST['password'])) {
-    $xx['password'] = $_POST['password'];
-}
-$xx['type'] = 3;
+$xx['role'] = $_POST['role'];
+$xx['password'] = $_POST['password'];
+
+$xx['type'] = 1;
 $user = $obj->insertnew("users", $xx);
-$red = !isset($_POST['password']) ? "index" : 'drivers';
 if ($user > 0) {
-    echo "Redirect : Driver Created Successfully.  URL$red";
+    echo "Redirect : Employee Created Successfully.  URLemployeelist";
 }
