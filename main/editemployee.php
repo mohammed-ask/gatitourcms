@@ -3,7 +3,7 @@ include "session.php";
 $id = $_GET['hakuna'];
 $rowuser = $obj->selectextrawhere("users", "id=" . $id . "")->fetch_assoc()
 ?>
-<form style="overflow-x: hidden;" id="adduser" onsubmit="event.preventDefault();sendForm('id', '<?= $id ?>', 'updatedriver', 'resultid', 'adduser');return 0;">
+<form style="overflow-x: hidden;" id="adduser" onsubmit="event.preventDefault();sendForm('id', '<?= $id ?>', 'updatemployee', 'resultid', 'adduser');return 0;">
     <label class="block text-sm" style="margin-bottom: 5px;">
         <span class="text-gray-700 dark:text-gray-400">Name</span>
         <input name="name" value="<?= $rowuser['name'] ?>" data-bvalidator="required" class="form-control" placeholder="Employee's Name" />

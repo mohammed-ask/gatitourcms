@@ -9,6 +9,7 @@ $xx['name'] = ucwords($_POST['name']);
 // $xx['email'] = $_POST['email'];
 $xx['mobile'] = $_POST['mobile'];
 $xx['password'] = $_POST['password'];
+$xx['role'] = $_POST['role'];
 $xx['type'] = 1;
 $user = $obj->update("users", $xx, $_POST['id']);
 if ($user > 0) {
