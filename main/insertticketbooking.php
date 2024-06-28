@@ -31,5 +31,5 @@ if ($user > 0) {
     if (!empty($playerids)) {
         $obj->sendnotification(explode(",", $playerids), $xx['name']);
     }
-    echo "Redirect : Ticket Booking Successfull.  URLindex";
+    echo "Redirect : Vehicle Booking Successfull.  URLindex";
 }
