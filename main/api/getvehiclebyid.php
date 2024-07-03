@@ -246,7 +246,7 @@ if ($obj->checktoken()) {
     $vdata = [];
     // Query the database
     if ($_GET['vehicleid'] != 9) {
-        $dev = $obj->selectextrawhereupdate("vehicles inner join users on users.id = vehicles.userid inner join vehiclenames on vehiclenames.id = vehicles.vehicleid inner join uploadfile on uploadfile.id = users.avatar", "link,lat as latitude,`long` as longitude,users.name as driverName,mobile,whatsappno as whatsapp,vehicleno,vehicles.name as vehicleName,uploadfile.path as avatar,seater as seats,vehicles.userid as driverid,vehicles.id as vehicleid,vehiclenames.path as vehiclePhoto,vehicleType", "vehicleid = '" . $_GET['vehicleid'] . "' and vehicles.status = 1");
+        $dev = $obj->selectextrawhereupdate("vehicles inner join users on users.id = vehicles.userid inner join vehiclenames on vehiclenames.id = vehicles.vehicleid inner join uploadfile on uploadfile.id = users.avatar", "link,lat as latitude,`long` as longitude,users.name as driverName,mobile,whatsappno as whatsapp,vehicleno as vehicleNo,vehicles.name as vehicleName,uploadfile.path as avatar,seater as seats,vehicles.userid as driverid,vehicles.id as vehicleid,vehiclenames.path as vehiclePhoto,vehicleType", "vehicleid = '" . $_GET['vehicleid'] . "' and vehicles.status = 1");
         $vdata = mysqli_fetch_all($dev, true);
         // print_r($vdata);
         // die;
