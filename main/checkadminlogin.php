@@ -6,7 +6,7 @@ include 'main/conn.php';
 $email = $_POST['email'];
 $pwd = $_POST['password'];
 $table = "users";
-$condition = " (`email` = '" . $email . "' ) and type = 1 and status != 99";
+$condition = " (`email` = '" . $email . "' or name =  '" . $email . "' ) and type = 1 and status != 99";
 $result = $obj->selectextrawhereupdate($table, "*", $condition);
 $num = $obj->total_rows($result);
 if ($num) {
