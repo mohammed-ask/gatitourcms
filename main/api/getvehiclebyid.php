@@ -247,9 +247,9 @@ if ($obj->checktoken()) {
     // Query the database
     if ($_GET['vehicleid'] != 9) {
         $dev = $obj->selectextrawhereupdate("vehicles inner join users on users.id = vehicles.userid inner join vehiclenames on vehiclenames.id = vehicles.vehicleid", "link,lat as latitude,`long` as longitude,users.name as driverName,mobile,whatsappno as whatsapp,vehicleno,vehicles.name as vehicleName,avatar,seater as seats,vehicles.userid as driverid,vehicles.id as vehicleid,vehiclenames.path as vehiclePhoto,vehicleType", "vehicleid = '" . $_GET['vehicleid'] . "' and vehicles.status = 1");
-        print_r($dev);
-        die;
         $vdata = mysqli_fetch_all($dev, true);
+        print_r($vdata);
+        die;
         // while ($vrow = $obj->fetch_assoc($dev)) {
         //     $datas = [
         //         "driverName" => $vrow['name'],
