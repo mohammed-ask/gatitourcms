@@ -7,5 +7,5 @@ $pass = $obj->updatewhere("users", $sy, "id=".$employeeid."");
 $xx["phone"] = $_POST['phone'];
 $help = $obj->updatewhere("personal_detail", $xx, "status=11");
 if ($help > 0) {
-    echo "Redirect : Helpline Updated Successfully.  URLindex";
+    echo "Redirect : Helpline Updated Successfully.  URLdashboard";
 }
