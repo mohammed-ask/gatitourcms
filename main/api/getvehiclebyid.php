@@ -273,7 +273,7 @@ if ($obj->checktoken()) {
         $data['vehicleInfo'] = $vdata;
         $data['svgicon'] = $obj->selectfieldwhere("vehiclenames", "svgicon", "id=" . $_GET['vehicleid'] . "");
     } else {
-        $dev = $obj->selectextrawhereupdate("users", "link,lat,`long`,users.name,mobile,whatsappno,avatar,users.id as driverid", "vehicleavailable = 'No' and status =1");
+        $dev = $obj->selectextrawhereupdate("users", "link,lat,`long`,users.name,mobile,whatsappno,avatar,users.id as driverid,vehicletype", "vehicleavailable = 'No' and status =1");
         while ($vrow = $obj->fetch_assoc($dev)) {
             $datas = [
                 "driverName" => $vrow['name'],
@@ -290,7 +290,8 @@ if ($obj->checktoken()) {
                 "vehiclePhoto" => "",
                 "seats" => $vrow["seater"],
                 // "svgicon" => $obj->selectfieldwhere("vehiclenames", "svgicon", "id=" . $_GET["vehicleid"] . ""),
-                "vehicleType" => "",
+                "vehicleType" => $vrow["vehicletype"],
+                "driver" => true,
             ];
             array_push($vdata, $datas);
         }
