@@ -18,7 +18,7 @@ if ($num) {
         $row12 = $obj->fetch_assoc($result12);
 
         $pwd1 = $row12['password'];
-        if ($pwd == $pwd) {
+        if ($pwd == $pwd1) {
             // if ($row['status'] == 0 || $row['activate'] === 'No') {
             //     echo "Error : Can't Login! You Are Not Allowed To Login";
             // } else {
