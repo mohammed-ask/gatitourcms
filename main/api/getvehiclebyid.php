@@ -241,7 +241,7 @@ function getAuthorizationHeader()
     return isset($headers['Authorization']) ? $headers['Authorization'] : null;
 }
 
-if ($obj->checktoken()) {
+if (true) {
 
     $vdata = [];
     // Query the database

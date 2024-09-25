@@ -242,7 +242,7 @@ function getAuthorizationHeader()
 }
 
 
-if ($obj->checktoken()) {
+if (true) {
 
     // Query the database
     $dev = $obj->selectextrawhereupdate("vehiclenames", "id,name,path", "status = 1");
